@@ -1,6 +1,7 @@
 <?php
 
-Route::get('/',['as' => '/','uses' => 'LoginController@getLogin']);
+Route::get('/home',['as' => 'home','uses' => 'PageController@home']);
+Route::get('/login',['as' => 'login','uses' => 'LoginController@getLogin']);
 Route::post('/login',['as' => 'login','uses' =>'LoginController@postLogin']);
 Route::group(['middleware' => ['authen','roles']],function() {
 	Route::get('/logout',['as' => 'logout', 'uses'=>'LoginController@getLogout']);

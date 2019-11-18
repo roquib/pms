@@ -8,16 +8,8 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-		public function __construct()
+    public function home()
     {
-        $this->middleware('auth');
-    }
-    public function dashboard()
-    {
-    	if (Gate::allows("isAdmin")) {
-    		return view('admin.dashboard');
-    	}else {
-    		return view('home');
-    	}
+        return view('home');
     }
 }
