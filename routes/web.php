@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/home', ['as' => 'home', 'uses' => 'PageController@home']);
+
 Route::get('/login', ['as' => 'login', 'uses' => 'LoginController@getLogin']);
 Route::post('/login', ['as' => 'login', 'uses' => 'LoginController@postLogin']);
 Route::group(['middleware' => ['authen', 'roles']], function () {
@@ -15,3 +15,4 @@ Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin']], functi
 Route::get('/noPermission', function () {
 	return view('permission.noPermission');
 })->name('noPermission');
+Route::get('/', ['as' => 'home', 'uses' => 'PageController@home']);

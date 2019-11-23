@@ -33,7 +33,7 @@
 
     <script src="{{asset('admin/assets/plugins/3d-bold-navigation/js/modernizr.js')}}"></script>
     <script src="{{asset('admin/assets/plugins/offcanvasmenueffects/js/snap.svg-min.js')}}"></script>
-
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -58,19 +58,19 @@
         </div><!-- Input Group -->
     </form><!-- Search Form -->
 
+    <div id="app">
+        <main class="page-content content-wrap">
+            @include('layouts.inc.navbar')
 
-    <main class="page-content content-wrap">
-        @include('layouts.inc.navbar')
+            @include('layouts.inc.sidebar')
 
-        @include('layouts.inc.sidebar')
-
-        {{-- @include('layouts.inc.page-inner') --}}
-        @yield('content')
-    </main><!-- Page Content -->
-
+            {{-- @include('layouts.inc.page-inner') --}}
+            @yield('content')
+        </main><!-- Page Content -->
+    </div>
     <div class="cd-overlay"></div>
 
-
+    <script src="{{asset('js/app.js')}}"></script>
     <!-- Javascripts -->
     <script src="{{asset('admin/assets/plugins/jquery/jquery-2.1.3.min.js')}}"></script>
     <script src="{{asset('admin/assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>

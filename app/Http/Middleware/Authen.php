@@ -14,10 +14,10 @@ class Authen
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next,$guard='web')
+    public function handle($request, Closure $next, $guard = 'web')
     {
         if (!Auth::guard($guard)->check()) {
-            return redirect()->route('/');
+            return redirect()->route('home');
         }
         return $next($request);
     }
