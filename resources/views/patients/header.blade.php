@@ -12,14 +12,14 @@
                 <span class="navbar-toggler-icon"></span>
 
             </button>
-
+   
             <div class="collapse navbar-collapse text-center  " id="navbarSupportedContent">
 
                 <ul class="navbar-nav ml-auto  ">
 
                     <li class="nav-item active ">
 
-                        <a class="nav-link a_hover  " href="index.html"><img src="{{asset('patient/img/home.png')}}"
+                        <a class="nav-link a_hover" href="{{ route('home') }}"><img src="{{asset('patient/img/home.png')}}"
                                 class="logo_img" alt="" />Home
 
                             <span class="sr-only">(current )</span>
