@@ -1,0 +1,549 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+/*.container {
+	max-width: 1340px;
+}
+*/
+.container {
+	max-width: 100%;
+}
+
+.header1{
+	
+	background-color: #00F3FF;
+	height: 76px;
+	position:sticky;
+	top:0;
+	z-index:2;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+	
+	padding-right: 23px;
+	padding-left: 23px;
+	
+}
+
+.hospita_logo_img {
+	margin: auto;
+	height:46px;
+	width: 80px;
+
+	
+}
+
+
+
+
+.navbar-light .navbar-nav .nav-link {
+	
+	color: black;
+}
+
+.bg-light {
+	
+	background-color: #A4C2DF!important;
+}
+
+.form-inline .form-control {
+	
+	display: inline-block;
+	width: 140px;
+	vertical-align: middle;
+	
+}
+
+.btn.btn-outline-success.my-2.my-sm-0 {
+	
+	color: white;
+	border-color: black;
+	width: 66px;
+	padding-top: 5px;
+	padding-left: 9px;
+	
+}
+
+.dropdown-item {
+	display: block;
+	width: 100%;
+	padding: .25rem 1.5rem !important;
+	clear: both;
+	font-weight: 400;
+	color: #212529;
+	text-align: inherit;
+	white-space: nowrap;
+	background-color: transparent;
+	border: 0;
+}
+
+
+
+
+
+
+.btn-outline-success:hover {
+	
+	color: #fff;
+	background-color: #010903;
+	border-color: #040d06;
+	
+}
+
+.dropdown-item{
+	
+	text-align:center;
+	
+}
+
+.navbar{
+	
+	padding-top:12px;
+}
+
+.a_hover:hover{
+	
+	background-color: lightseagreen;
+	color: white !important;
+
+}
+
+.a_hover {
+
+	border-radius: 3px;
+}
+
+  /* carousel*/
+  
+  
+.caro{
+	
+	width: 100%;
+	
+
+}
+
+
+.carousel-inner img {
+      
+      height: 600px;
+	  
+  }
+
+.logo_img {
+	width: 25px;
+	padding-right: 5px;
+	margin: auto;
+	margin-top: -4px;
+}
+
+a .login_img {
+	width: 20px;
+	margin-left: 30px !important;
+	text-align: center;
+	margin:auto;
+}
+
+a .signin_img {
+	width: 20px;
+	text-align: center;
+	margin:auto;
+}
+
+/* middle*/
+
+.middle{
+	
+	
+	width: 1139px;
+margin: auto;
+margin-top: 60px;
+margin-bottom:60px;
+	
+}
+
+
+.middle_header {
+	font-size: 37px;
+}
+
+.hr {
+	width: 236px;
+	margin: auto;
+	margin-top: 13px;
+	color: hsl;
+	border: solid 1px darkgray;
+}
+
+.heart_logo {
+	border-radius: 70px;
+	opacity: 0.9;
+}
+
+.heart_title {
+	padding-top: 28px;
+	margin-bottom: auto;
+}
+
+.heart_contant.text-left {
+	font-style: unset;
+	font-family: "Open Sans", sans-serif;
+	font-size: 15.5px;
+}
+
+
+.appointment_logo {
+	border-radius: 70px;
+	opacity: 0.9;
+}
+
+.appointment_title {
+	padding-top: 28px;
+	margin-bottom: auto;
+}
+
+.appointment_contant.text-left {
+	font-style: unset;
+	font-family: "Open Sans", sans-serif;
+	font-size: 15.5px;
+}
+
+
+
+.unity_logo {
+	border-radius: 70px;
+	opacity: 0.9;
+}
+
+.unity_title {
+	padding-top: 28px;
+	margin-bottom: auto;
+}
+
+.unity_contant.text-left {
+	font-style: unset;
+	font-family: "Open Sans", sans-serif;
+	font-size: 15.5px;
+}
+
+
+.help_logo {
+	border-radius: 70px;
+	opacity: 0.9;
+}
+
+.help_title {
+	padding-top: 28px;
+	margin-bottom: auto;
+}
+
+.help_contant.text-left {
+	font-style: unset;
+	font-family: "Open Sans", sans-serif;
+	font-size: 15.5px;
+}
+
+
+/* specialist doctor */
+
+.col-sm-12.text-center.mt-5.header {
+	
+	margin-top: 120px !important;
+}
+
+.f_d_img {
+	width: auto;
+	margin: auto;
+}
+
+
+
+  /* footer*/
+
+.container1 {
+	width: 1170px;
+	margin: auto;
+}
+
+
+.m-t-md.footer_form {
+	width: 90%;
+}
+.row.footer_row {
+	padding-top: 58px;
+}
+
+.page-footer {
+	height: 63px;
+	background-color: #F1F4F9;
+	margin: auto;
+	padding-top: 23px;
+	margin-top: 80px;
+}
+
+
+h3 {
+	color: #4e5e6a;
+	font-size: 24px;
+
+	line-height: 26.4px;
+	font-weight: 300;
+	font-family: "Open Sans", sans-serif;
+}
+
+
+.footer_content {
+	font-size: 14px;
+	opacity: o.7;
+	color: #4e5e6a;
+	font-weight: 400;
+	line-height: 22px;
+	font-family: "Open Sans", sans-serif;
+}
+
+address {
+	color: #4e5e6a;
+	line-height: 18.5667px;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+
+
+
+
+.panel .panel-body {
+	
+				 padding: 0px; 
+
+			}
+			.map {
+			
+				margin: auto;
+			}
+			
+			
+	.icon {
+	
+}
+
+.social_icon {
+	width: 30px;
+	margin-left: 2px;
+	margin-top: -25px;
+}	
+			
+			
+			
+		
+
+
+@media (min-width: 100px) and (max-width: 991.98px) { 
+
+	.navbar-nav.ml-auto {
+		
+		margin-top: 40px;
+		
+	}
+
+	.a_hover {
+		
+		padding-top: 17px;
+		text-align: center;
+		margin: 0 auto;
+		display: inline-block;
+		padding-bottom: 17px;
+		
+	}
+	
+	.navbar-nav.ml-auto {
+		margin-top: 30px !important;
+		background-color: rebeccapurple;
+		overflow: hidden;
+		width: 35%;
+		text-align: center;
+		margin: 0 auto;
+		
+
+}
+
+.form-inline .form-control {
+	display: inline-block;
+	width: 100px;
+	vertical-align: middle;
+}
+
+ .d-inline-block.login_button {
+	background-color: aliceblue;
+	border-radius: 4px;
+}
+  
+  .logo_img {
+	width: 31px;
+	padding-right: 5px;
+	margin: auto;
+}
+
+a .login_img {
+	width: 20px;
+	margin-left: 13x !important;
+	text-align: center;
+	margin:auto;
+}
+
+a .signin_img {
+	width: 20px;
+	text-align: center;
+	margin:auto;
+}
+
+
+/* slider */
+
+.caro{
+	
+	width: 100%;
+	margin-top:50px;
+
+}
+
+.carousel-inner img {
+      
+      height: 375px;
+	  
+  }
+  
+ 
+  
+  
+  /* footer*/
+  
+ h1{
+	
+	color:black;
+	background-color:yellow;
+	text-transform: capitalize;
+	font-family:Georgia, serif;
+	margin-top: 200px;
+	margin-bottom: 3.5rem;
+
+}
+
+
+ .container.contact_from {
+	 
+	max-width: 400px;
+	
+ }
+ 
+.copyright{
+	
+	color:black;
+	margin-top: -30px;
+	font-family:"Times New Roman", Times, serif;
+
+}
+
+#footer-section{
+	
+	background-color:blue;
+	
+}
+
+a img{
+	
+	width:38px;
+	margin-left:10px;
+	margin-top: -50px;
+	
+}
+
+.icon{
+	
+	line-height: 100px;
+}
+
+
+.gmail{
+	
+	color:black;
+	font-family:Georgia, serif;
+	margin-top:0px;
+	font-size: 20px;
+	margin-right: -59px;
+	text-align:center;
+	margin-left: -54px;
+	
+}
+
+
+.address{
+	
+	color:black;
+	font-family:Georgia, serif;
+	font-size: 20px;
+	margin-left: -37px;
+	text-align:center;
+	margin-top: 30px;
+	
+}
+
+
+
+.mail{
+	
+	color:black;
+	text-decoration: none;
+	font-size: 20px;
+	text-align:center;
+	margin-left: -23px;
+	
+}
+.mail a{
+
+	background-color: yellow;
+	padding: 12px;
+    border-radius: 8px;
+	font-size: 20px;
+	margin-left: 50px;
+	
+}
+
+.mail a:hover{
+	
+	color: white;
+	text-decoration: none;
+	background-color: black;
+	
+}
+
+.phone{
+	
+	color:black;
+	font-family:Georgia, serif;
+	margin-top: 45px;
+	font-size: 20px;
+	
+}
+}
+
+
+
+@media (min-width: 100px) and (max-width: 730.98px) { 
+
+.btn.btn-success.text-sm-center {
+	break-after: page;
+}
+
+
+.d-inline-block.login_button {
+	margin:auto;
+}
+
+.form-control {
+	margin-left: 118px;
+}
+
+}
