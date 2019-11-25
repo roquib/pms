@@ -16,3 +16,9 @@ Route::get('/noPermission', function () {
 	return view('permission.noPermission');
 })->name('noPermission');
 Route::get('/', ['as' => 'home', 'uses' => 'PageController@home']);
+Route::get('/doctor', ['as' => 'doctor', 'uses' => 'PageController@doctor']);
+Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['patient']], function () {
+	Route::get('/patient/register', ['as' => 'register', 'uses' => 'PatientController@register']);
+	Route::get('/patient/login', ['as' => 'login', 'uses' => 'PatientController@login']);
+	Route::get('/appointment', ['as' => 'appointment', 'uses' => 'PatientController@appointment']);
+});

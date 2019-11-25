@@ -16,6 +16,7 @@ class Authen
      */
     public function handle($request, Closure $next, $guard = 'web')
     {
+        dd($guard);
         if (!Auth::guard($guard)->check()) {
             return redirect()->route('home');
         }

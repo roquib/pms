@@ -22,16 +22,16 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <script src="{{asset('js/app.js')}}"></script>
+    @yield('css')
 </head>
 
 
 <body>
     {{-- header --}}
-<div id="app">
-@include('patients.header')
-@yield('content')
-</div>
+    @include('patients.header')
+    <div id="app">
+        @yield('content')
+    </div>
 
 
     <!--footer-->
@@ -108,19 +108,20 @@
     </div>
 
     <!-- Javascripts -->
-        <script>
-            $(document).ready(function(){
+    <script src="{{asset('js/app.js')}}"></script>
+    <script>
+        $(document).ready(function(){
               $('[data-toggle="tooltip"]').tooltip();   
             });
-        </script>
-            <script>
-                $('.carousel').carousel({
+    </script>
+    <script>
+        $('.carousel').carousel({
 
                 interval :2000
                 });
                 
-            </script>
-
+    </script>
+    @yield('js')
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzjeZ1lORVesmjaaFu0EbYeTw84t1_nek"></script>
 </body>

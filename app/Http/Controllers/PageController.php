@@ -12,4 +12,9 @@ class PageController extends Controller
     {
         return view('home');
     }
+
+    public function doctor()
+    {
+        return view('doctors.body');
+    }
 }

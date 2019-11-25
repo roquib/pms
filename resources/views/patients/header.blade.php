@@ -12,15 +12,15 @@
                 <span class="navbar-toggler-icon"></span>
 
             </button>
-   
+
             <div class="collapse navbar-collapse text-center  " id="navbarSupportedContent">
 
                 <ul class="navbar-nav ml-auto  ">
 
                     <li class="nav-item active ">
 
-                        <a class="nav-link a_hover" href="{{ route('home') }}"><img src="{{asset('patient/img/home.png')}}"
-                                class="logo_img" alt="" />Home
+                        <a class="nav-link a_hover" href="{{ route('home') }}"><img
+                                src="{{asset('patient/img/home.png')}}" class="logo_img" alt="" />Home
 
                             <span class="sr-only">(current )</span>
 
@@ -30,8 +30,8 @@
 
                     <li class="nav-item ">
 
-                        <a class="nav-link a_hover" href="Doctor.html"> <img src="{{asset('patient/img/doctor.png')}}"
-                                class="logo_img" alt="" /> Doctor</a>
+                        <a class="nav-link a_hover" href="{{route('doctor')}}"> <img
+                                src="{{asset('patient/img/doctor.png')}}" class="logo_img" alt="" /> Doctor</a>
 
                     </li>
 
@@ -76,7 +76,7 @@
 
                     <li class="nav-item ">
 
-                        <a class="nav-link a_hover " href="user_regstration.html"> <img
+                        <a class="nav-link a_hover " href="{{route('appointment')}}"> <img
                                 src="{{asset('patient/img/appointment.png')}}" class="logo_img" alt="" />Appointment</a>
 
                     </li>
