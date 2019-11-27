@@ -33,10 +33,18 @@
         @yield('content')
     </div>
 
-
     <!--footer-->
-    @if (!Auth::check())
+    @php
+    $main = route('appointment');
+    $compare = route('/').'/appointment';
+    // echo $main.' || '.$compare;
+    @endphp
+
+    @if (Auth::check())
+    @if ($main == $compare)
+    @else
     @include('patients.footer')
+    @endif
     @endif
     @yield('js')
     <div class="page-footer">

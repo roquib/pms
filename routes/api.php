@@ -17,3 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/user/{id}', 'API\UserController@findUser');
+Route::post('/department', 'API\UserController@findDoctorWithDept')->name('findDoctorWithDept');

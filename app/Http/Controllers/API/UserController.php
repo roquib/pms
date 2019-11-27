@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Department;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
@@ -17,6 +18,12 @@ class UserController extends Controller
     public function index()
     {
         //
+    }
+    public function findDoctorWithDept(Request $request)
+    {
+        return Department::with('user')
+            ->where('name', $request->department)
+            ->get();
     }
     public function findUser($id)
     {

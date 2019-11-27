@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
 use App\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
@@ -18,7 +19,9 @@ class PageController extends Controller
     }
     public function appointment()
     {
-        return view('patients.appointment');
+        $departments = Department::where('role_id', 5)->get();
+        // dd($departments);
+        return view('patients.appointment', ['departments' => $departments]);
     }
 
     public function doctor()

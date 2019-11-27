@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 
-    <form>
+    <form id="frm-create-appointment">
 
         <div class="form-row ">
 
@@ -10,8 +10,7 @@
 
             <div class="col-sm-12">
 
-                <h6>
-                    <p class="text-center  "> Appointment</p>
+                <h6 class="display-4 text-center">Appointment
                 </h6>
 
             </div>
@@ -45,41 +44,18 @@
 
             <div class="col-sm-3 text-left">
 
-                <label for="input-first-name ">First Name <span class="req_color">*</span> </label>
+                <label for="name ">Name <span class="req_color">*</span> </label>
 
             </div>
 
             <div class="form-group col-sm-5  ">
 
-                <input type="text" class="form-control" id="input-first-name" name="first_name"
-                    placeholder=" Type Your First Name" required />
+                <input type="text" class="form-control" id="name" name="name" placeholder=" Type Your Name"
+                    value="{{Auth::user()->name}}" required />
 
             </div>
 
         </div>
-
-
-
-        <div class="form-row ">
-
-            <div class="col-sm-2"> </div>
-
-            <div class="col-sm-3 text-left">
-
-                <label for="input-last-name">Last Name</label>
-
-            </div>
-
-            <div class="form-group col-sm-5 ">
-
-                <input type="text" class="form-control" id="input-last-name" name="last_name"
-                    placeholder=" Type Your Last Name" />
-
-            </div>
-
-        </div>
-
-
 
         <div class="form-row ">
 
@@ -94,7 +70,7 @@
             <div class="form-group col-sm-5">
 
                 <input type="text" class="form-control" id="input-Email" name="phone_number"
-                    placeholder="Type Your Phone or Email" required />
+                    placeholder="Type Your Phone or Email" value="{{Auth::user()->phone}}" required />
 
             </div>
 
@@ -108,42 +84,41 @@
 
             <div class="col-sm-3 text-left">
 
-                <label for="input-Address">Address <span class="req_color">*</span> </label>
-
-            </div>
-
-            <div class=" form-group col-sm-5">
-
-                <input type="text" class="form-control" id="input-Address" name="address"
-                    placeholder=" Type Your Full Address" required />
-
-            </div>
-
-            <div class="col-sm-3">
-
-            </div>
-
-        </div>
-
-
-
-        <div class="form-row">
-
-            <div class="col-sm-2"> </div>
-
-            <div class="col-sm-3 text-left">
-
-                <label for="input">Doctor <span class="req_color">*</span> </label>
+                <label for="input">Gender <span class="req_color">*</span> </label>
 
             </div>
 
             <div class="form-group col-sm-5">
 
-                <select class="form-control">
+                <select class="form-control" name="sex">
+                    <option value="male" name="">Male</option>
+                    <option value="female" name="">Female</option>
+                    <option value="other" name="">Other</option>
 
+                </select>
 
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-sm-2"> </div>
+
+            <div class="col-sm-3 text-left">
+
+                <label for="department">Department <span class="req_color">*</span> </label>
+
+            </div>
+
+            <div class="form-group col-sm-5">
+
+                <select class="form-control" id="department" name="department">
                     <option selected>Choose-----</option>
-
+                    @foreach ($departments as $department)
+                    <option value="{{$department->name}}" name="">{{ucfirst($department->name)}}</option>
+                    @endforeach
+                    {{-- 
                     <option value="Cardiology" name="">Cardiology</option>
                     <option value="Dental & Maxillofacial Surgery " name="">Dental & Maxillofacial Surgery </option>
                     <option value="Endocrinology & Diabetology" name="">Endocrinology & Diabetology</option>
@@ -154,8 +129,26 @@
                     <option value="Obstetrics & Gynaecology" name="">Obstetrics & Gynaecology</option>
                     <option value="Ophthalmology" name="">Ophthalmology</option>
                     <option value="Rheumatology" name="">Rheumatology</option>
-                    <option value="Urology" name="">Urology</option>
+                    <option value="Urology" name="">Urology</option> --}}
 
+                </select>
+
+            </div>
+
+        </div>
+        <div class="form-row">
+
+            <div class="col-sm-2"> </div>
+
+            <div class="col-sm-3 text-left">
+
+                <label for="doctor">Doctor <span class="req_color">*</span> </label>
+
+            </div>
+
+            <div class="form-group col-sm-5">
+
+                <select class="form-control" onclick="chooseDoctor(this)" id="doctor" name="doctor">
                 </select>
 
             </div>
@@ -182,6 +175,27 @@
             </div>
 
         </div>
+        <div class="form-row">
+
+            <div class="col-sm-2"> </div>
+
+            <div class="col-sm-3 text-left">
+
+                <label for="input-Address">Address <span class="req_color">*</span> </label>
+
+            </div>
+
+            <div class=" form-group col-sm-5">
+
+                <textarea name="address" id="address" class="form-control"></textarea>
+
+            </div>
+
+            <div class="col-sm-3">
+
+            </div>
+
+        </div>
 
 
         <div class="form-row">
@@ -192,9 +206,9 @@
 
             <div class="form-group col-sm-5">
 
-                <a type="text" class="btn" href="index.html" style="color:white;">Back </a>
+                <a type="text" class="btn btn-primary" href="{{route('/')}}">Back </a>
 
-                <button type="submit" class="btn" style=" color:white;">Submit</button>
+                <button type="submit" class="btn btn-danger">Submit</button>
 
             </div>
 
@@ -203,4 +217,39 @@
     </form>
 
 </div>
+@endsection
+@section('js')
+<script>
+    function chooseDoctor(obj) {
+        var value = $('#doctor').val();
+        if(value) {
+            // console.log()
+            alert('doctor is inserted'+value);
+        }else {
+            alert('please choose department first' + value);
+        }
+    }
+    $('#department').on('click',function() {
+        var value = $(this).val();
+        $.post(`{{route('findDoctorWithDept')}}`,{department: value},function(data){
+            // $('#doctor').append($('<option/>',{
+            //     value: data.name,
+            //     text: data.name
+            // }));
+            // console.log(data);
+            $.each(data,function(i,value){
+                $('#doctor').append($('<option/>',{
+                    value: value.user_id,
+                    text: value.user.name
+                }));
+                // console.log(value.user);
+            });
+        });
+    });
+    $('#frm-create-appointment').on('submit',function(e){
+        e.preventDefault();
+        var data = $(this).serializeArray();
+        console.log(data);
+    });
+</script>
 @endsection

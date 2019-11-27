@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
             'role_id' => 1,
             'active' => 1,
             'name' => 'Md. Momen Sheikh',
+            'phone' => '01786356432',
             'username' => 'momen',
             'email' => 'momen@gmail.com',
             'password' => bcrypt('123456789'),
