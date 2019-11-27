@@ -19,8 +19,8 @@
 
                     <li class="nav-item active ">
 
-                        <a class="nav-link a_hover" href="{{ route('home') }}"><img
-                                src="{{asset('patient/img/home.png')}}" class="logo_img" alt="" />Home
+                        <a class="nav-link a_hover" href="{{ route('/') }}"><img src="{{asset('patient/img/home.png')}}"
+                                class="logo_img" alt="" />Home
 
                             <span class="sr-only">(current )</span>
 
@@ -83,8 +83,8 @@
 
                     <li class="nav-item ">
 
-                        <a class="nav-link a_hover " href="#contact"> <img src="{{asset('patient/img/phone.png')}}"
-                                class="logo_img" alt="" />Contact</a>
+                        <a class="nav-link a_hover " href="{{route('contact')}}"> <img
+                                src="{{asset('patient/img/phone.png')}}" class="logo_img" alt="" />Contact</a>
 
                     </li>
 
@@ -102,15 +102,47 @@
                         <div class="d-inline-block login_button">
 
 
-                            <a class="btn text-sm-center" href="signin.html"><img
+                            {{-- <a class="btn text-sm-center" href="signin.html"><img
                                     src="{{asset('patient/img/login.png')}}" data-toggle="tooltip" title="Signin"
-                                    class="login_img" alt="" /></a>
+                            class="login_img" alt="" /></a>
 
 
                             <a class="" href="user_regstration.html"><img src="{{asset('patient/img/logout.png')}}"
                                     data-toggle="tooltip" class="signin_img" title="Signup" /></a>
+                            --}}
+                            <ul class="navbar-nav ml-auto">
+                                <!-- Authentication Links -->
+                                @guest
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                                @endif
+                                @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
 
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                                                 document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
 
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                                @endguest
+                            </ul>
 
                         </div>
                     </form>

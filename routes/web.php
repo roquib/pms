@@ -1,10 +1,10 @@
 <?php
 
 
-Route::get('/login', ['as' => 'login', 'uses' => 'LoginController@getLogin']);
-Route::post('/login', ['as' => 'login', 'uses' => 'LoginController@postLogin']);
+Route::get('/admin/login', ['as' => 'admin.login', 'uses' => 'LoginController@getLogin']);
+Route::post('/admin/login', ['as' => 'admin.login', 'uses' => 'LoginController@postLogin']);
 Route::group(['middleware' => ['authen', 'roles']], function () {
-	Route::get('/logout', ['as' => 'logout', 'uses' => 'LoginController@getLogout']);
+	Route::post('/admin/logout', ['as' => 'admin.logout', 'uses' => 'LoginController@getLogout']);
 	Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@dashboard']);
 	Route::get('/admin/profile', ['as' => 'profile', 'uses' => 'DashboardController@profile']);
 	Route::get('/admin/all', ['as' => 'all-admins', 'uses' => 'DashboardController@allAdmins']);
@@ -15,10 +15,10 @@ Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin']], functi
 Route::get('/noPermission', function () {
 	return view('permission.noPermission');
 })->name('noPermission');
-Route::get('/', ['as' => 'home', 'uses' => 'PageController@home']);
+Route::get('/', ['as' => '/', 'uses' => 'PageController@home']);
 Route::get('/doctor', ['as' => 'doctor', 'uses' => 'PageController@doctor']);
-Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['patient']], function () {
-	Route::get('/patient/register', ['as' => 'register', 'uses' => 'PatientController@register']);
-	Route::get('/patient/login', ['as' => 'login', 'uses' => 'PatientController@login']);
-	Route::get('/appointment', ['as' => 'appointment', 'uses' => 'PatientController@appointment']);
-});
+Route::get('/appointment', ['middleware' => ['auth'], 'as' => 'appointment', 'uses' => 'PageController@appointment']);
+Route::get('/contact', ['as' => 'contact', 'uses' => 'PageController@contact']);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

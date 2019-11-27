@@ -2,9 +2,10 @@
 @section('content')
 <div class="doctor_all_profile">
 
-
     <div class="container3">
-
+        <h1 class="display-4 text-center">
+            List of Doctors Available Now
+        </h1>
 
         <div class="row">
 

@@ -32,11 +32,11 @@ class LoginController extends Controller
 		if ($auth) {
 			return redirect()->route('dashboard');
 		}
-		return redirect()->route('login');
+		return redirect()->route('admin.login');
 	}
 	public function getLogout()
 	{
 		Auth::guard('web')->logout();
-		return redirect()->route('login');
+		return redirect()->route('admin.login');
 	}
 }

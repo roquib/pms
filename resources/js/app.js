@@ -1,53 +1,32 @@
-require("./bootstrap");
-window.Vue = require("vue");
-import { Form, HasError, AlertError } from "vform";
-import VueProgressBar from "vue-progressbar";
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
 
-import swal from "sweetalert2";
-// autocomplete input field
-import { CoolSelectPlugin } from "vue-cool-select";
-window.Form = Form;
-window.Fire = new Vue();
-window.swal = swal;
-// vuejs input field error dispaly
-Vue.component(HasError.name, HasError);
-Vue.component(AlertError.name, AlertError);
+require('./bootstrap');
 
-// vuejs pagination
-Vue.component("pagination", require("laravel-vue-pagination"));
+window.Vue = require('vue');
 
-Vue.use(VueProgressBar, {
-    color: "rgb(143, 255, 199)",
-    failedColor: "red",
-    height: "5px"
-});
-import TimeAgo from "javascript-time-ago";
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
 
-// Load locale-specific relative date/time formatting rules.
-import en from "javascript-time-ago/locale/en";
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-// Add locale-specific relative date/time formatting rules.
-TimeAgo.addLocale(en);
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-// Create relative date/time formatter.
-const timeAgo = new TimeAgo("en-US");
-// Vue.use(VueSelect, {
-//     theme: "bootstrap" // or 'material-design'
-// });
-
-const toast = swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 3000
-});
-window.toast = toast;
-// main vue
-import UserProfile from "./components/UserProfile.vue";
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
 
 const app = new Vue({
-    el: "#app",
-    components: {
-        "user-profile": UserProfile
-    }
+    el: '#app',
 });

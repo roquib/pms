@@ -10,7 +10,15 @@ class PageController extends Controller
 {
     public function home()
     {
-        return view('home');
+        return view('patients.home');
+    }
+    public function contact()
+    {
+        return view('patients.contact');
+    }
+    public function appointment()
+    {
+        return view('patients.appointment');
     }
 
     public function doctor()
