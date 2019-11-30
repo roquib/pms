@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('/user/{id}', 'API\UserController@findUser');
 Route::post('/department', 'API\UserController@findDoctorWithDept')->name('findDoctorWithDept');
+Route::get('/patient/all/', 'API\PatientController@all')->name('all.patient');

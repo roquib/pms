@@ -2,12 +2,9 @@
 @section('content')
 <div class="container">
 
-    <form id="frm-create-appointment">
-
+    <form id="frm-create-appointment" method="POST" action="{{route('appointmentConfirm')}}">
+        @csrf
         <div class="form-row ">
-
-
-
             <div class="col-sm-12">
 
                 <h6 class="display-4 text-center">Appointment
@@ -246,10 +243,10 @@
             });
         });
     });
-    $('#frm-create-appointment').on('submit',function(e){
-        e.preventDefault();
-        var data = $(this).serializeArray();
-        console.log(data);
-    });
+    // $('#frm-create-appointment').on('submit',function(e){
+    //     e.preventDefault();
+    //     var data = $(this).serializeArray();
+    //     console.log(data);
+    // });
 </script>
 @endsection

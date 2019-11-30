@@ -10,6 +10,7 @@ Route::group(['middleware' => ['authen', 'roles']], function () {
 	Route::get('/admin/all', ['as' => 'all-admins', 'uses' => 'DashboardController@allAdmins']);
 	Route::get('/admin/view/{id}', ['as' => 'view-admin', 'uses' => 'DashboardController@viewAdmin']);
 	Route::get('/admin/setting', ['as' => 'setting', 'uses' => 'DashboardController@setting']);
+	Route::get('/patient/all', ['as' => 'allPatient', 'uses' => 'DashboardController@allPatient']);
 });
 Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin']], function () { });
 Route::get('/noPermission', function () {
@@ -18,6 +19,9 @@ Route::get('/noPermission', function () {
 Route::get('/', ['as' => '/', 'uses' => 'PageController@home']);
 Route::get('/doctor', ['as' => 'doctor', 'uses' => 'PageController@doctor']);
 Route::get('/appointment', ['middleware' => ['auth'], 'as' => 'appointment', 'uses' => 'PageController@appointment']);
+Route::post('/patient/appointment/confirm', ['middleware' => ['auth'], 'as' => 'appointmentConfirm', 'uses' => 'PageController@appointmentConfirm']);
+Route::get('/patient/appointment/confirm', ['middleware' => ['auth'], 'as' => 'appointmentConfirmGet', 'uses' => 'PageController@appointmentConfirmGet']);
+
 Route::get('/contact', ['as' => 'contact', 'uses' => 'PageController@contact']);
 Auth::routes();
 

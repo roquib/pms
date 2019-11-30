@@ -44,13 +44,13 @@
 
             <!--page patients elements-->
 
-            <li><a href="patients.html"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
+            <li><a href="{{route('allPatient')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
                     <p>Patients</p>
                 </a></li>
 
 
             <!--page admin elements-->
-
+            @can('isAdmin')
             <li><a href="{{route('all-admins')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
                     <p>Admin</p>
                 </a></li>
@@ -128,6 +128,7 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </li>
+            @endcan
         </ul>
 
     </div><!-- Page Sidebar Inner -->

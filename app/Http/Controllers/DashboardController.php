@@ -22,6 +22,10 @@ class DashboardController extends Controller
     {
         return view('pages.admin.profile');
     }
+    public function allPatient()
+    {
+        return view('pages.admin.allpatient');
+    }
     public function allAdmins()
     {
         return view('pages.admin.all-admins', ['users' => User::all()]);

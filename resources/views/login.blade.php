@@ -28,7 +28,7 @@
 
   <div class="container">
 
-    <form class="login-form" action="{{ route('login') }}" method="post">
+    <form class="login-form" action="{{ route('admin.login') }}" method="post">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="login-wrap">
         <p class="login-img"><i class="icon_lock_alt"></i></p>
@@ -41,9 +41,9 @@
           <input type="password" name="password" class="form-control" placeholder="Password">
         </div>
         <label class="checkbox">
-                <input type="checkbox" value="remember-me"> Remember me
-                <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
-            </label>
+          <input type="checkbox" value="remember-me"> Remember me
+          <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
+        </label>
         <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
         <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>
       </div>

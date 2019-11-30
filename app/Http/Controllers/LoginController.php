@@ -29,6 +29,7 @@ class LoginController extends Controller
 			'password' => $request->password,
 			'active' => 1
 		]);
+		// dd($auth);
 		if ($auth) {
 			return redirect()->route('dashboard');
 		}
