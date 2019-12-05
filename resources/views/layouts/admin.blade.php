@@ -70,7 +70,7 @@
     </div>
     <div class="cd-overlay"></div>
 
-    <script src="{{asset('js/app.js')}}"></script>
+    {{-- <script src="{{asset('js/app.js')}}"></script> --}}
     <!-- Javascripts -->
     <script src="{{asset('admin/assets/plugins/jquery/jquery-2.1.3.min.js')}}"></script>
     <script src="{{asset('admin/assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
