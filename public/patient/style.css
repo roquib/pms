@@ -11,7 +11,7 @@
 	max-width: 100%;
 }
 
-.header1{
+.navbar-header{
 	
 	background-color: #00F3FF;
 	height: 76px;
@@ -22,8 +22,8 @@
 
 .navbar-expand-lg .navbar-nav .nav-link {
 	
-	padding-right: 23px;
-	padding-left: 23px;
+	padding-right: 20px !important;
+	padding-left: 20px !important;
 	
 }
 
@@ -34,7 +34,6 @@
 
 	
 }
-
 
 
 
@@ -81,9 +80,6 @@
 
 
 
-
-
-
 .btn-outline-success:hover {
 	
 	color: #fff;
@@ -114,6 +110,18 @@
 
 	border-radius: 3px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
   /* carousel*/
   
@@ -152,12 +160,14 @@ a .signin_img {
 	margin:auto;
 }
 
+
+
 /* middle*/
 
 .middle{
 	
 	
-	width: 1139px;
+width: 80%;
 margin: auto;
 margin-top: 60px;
 margin-bottom:60px;
@@ -167,7 +177,18 @@ margin-bottom:60px;
 
 .middle_header {
 	font-size: 37px;
+	
 }
+
+.service-total-contant{
+	
+		padding-right: 35px !important;
+		padding-left: 35px !important;
+}
+
+
+
+
 
 .hr {
 	width: 236px;
@@ -246,27 +267,18 @@ margin-bottom:60px;
 }
 
 
-/* specialist doctor */
 
-.col-sm-12.text-center.mt-5.header {
-	
-	margin-top: 120px !important;
-}
-
-.f_d_img {
-	width: auto;
-	margin: auto;
-}
 
 
 
   /* footer*/
 
 .container1 {
-	width: 1170px;
+	width: 85%;
 	margin: auto;
+	
+	
 }
-
 
 .m-t-md.footer_form {
 	width: 90%;
@@ -312,20 +324,13 @@ address {
 
 
 
-
-
-.panel .panel-body {
-	
-				 padding: 0px; 
-
-			}
-			.map {
+.map {
 			
-				margin: auto;
-			}
+	margin: auto;
+}
 			
 			
-	.icon {
+.icon {
 	
 }
 
@@ -334,70 +339,116 @@ address {
 	margin-left: 2px;
 	margin-top: -25px;
 }	
+
+
+
+
 			
+	/*media qurey navbar data toggle*/	
+	
 			
+	@media (min-width: 100px) and (max-width: 1170.98px) { 
+
+				.navbar-nav.ml-auto {
+					
+					margin-top: 40px;
+					
+				}
+
+				.a_hover {
+					
+					padding-top: 17px;
+					text-align: center;
+					margin: 0 auto;
+					display: inline-block;
+					padding-bottom: 17px;
+					
+				}
+				
+				.navbar-nav.ml-auto {
+					margin-top: 30px !important;
+					background-color: rebeccapurple;
+					overflow: hidden;
+					width: 35%;
+					text-align: center;
+					margin: 0 auto;
+					border-radius: 10px;
+					
+
+			}
+
+			.form-inline .form-control {
+				display: inline-block;
+				width: 65%;
+				vertical-align: middle;
+				margin: auto;
+			}
 			
-		
+			.form-inline  {
+				display: inline-block;
+				margin:auto;
+			}
 
+			.d-inline-block {
+				width: -webkit-fill-available; 
+				
+			}
+			.d-inline-block.login_button {
+				background-color: aqua;
+				border-radius: 4px;
+				margin: auto !important;
+				width: 90%;
+				text-align: center;
+			}
+			
+			  
+			  .logo_img {
+				width: 31px;
+				padding-right: 5px;
+				margin: auto;
+			}
 
-@media (min-width: 100px) and (max-width: 991.98px) { 
+			a .login_img {
+				width: 20px;
+				margin-left: 13x !important;
+				text-align: center;
+				margin:auto;
+			}
 
-	.navbar-nav.ml-auto {
-		
-		margin-top: 40px;
-		
-	}
+			a .signin_img {
+				width: 20px;
+				text-align: center;
+				margin:auto;
+			}	
 
-	.a_hover {
-		
-		padding-top: 17px;
-		text-align: center;
-		margin: 0 auto;
-		display: inline-block;
-		padding-bottom: 17px;
-		
 	}
 	
-	.navbar-nav.ml-auto {
-		margin-top: 30px !important;
-		background-color: rebeccapurple;
-		overflow: hidden;
-		width: 35%;
-		text-align: center;
-		margin: 0 auto;
+	
+	
+/* media query for Specialist Doctor  */
+	
+	@media (min-width: 100px) and (max-width: 767.98px) { 
+	
 		
+	
+	
+		.s_doctor_title{
+			
+			
+			text-align:center;
+			
+		}
+	
+	}
+	
 
-}
+	
+	
+/* media quary slider and footer */	
+	
+@media (min-width: 100px) and (max-width: 992.98px) { 
 
-.form-inline .form-control {
-	display: inline-block;
-	width: 100px;
-	vertical-align: middle;
-}
 
- .d-inline-block.login_button {
-	background-color: aliceblue;
-	border-radius: 4px;
-}
-  
-  .logo_img {
-	width: 31px;
-	padding-right: 5px;
-	margin: auto;
-}
-
-a .login_img {
-	width: 20px;
-	margin-left: 13x !important;
-	text-align: center;
-	margin:auto;
-}
-
-a .signin_img {
-	width: 20px;
-	text-align: center;
-	margin:auto;
-}
 
 
 /* slider */
@@ -405,7 +456,7 @@ a .signin_img {
 .caro{
 	
 	width: 100%;
-	margin-top:50px;
+	margin-top:0px;
 
 }
 
@@ -414,6 +465,8 @@ a .signin_img {
       height: 375px;
 	  
   }
+  
+  
   
  
   
@@ -530,6 +583,9 @@ a img{
 }
 
 
+/* media query button */
+
+
 
 @media (min-width: 100px) and (max-width: 730.98px) { 
 
@@ -542,8 +598,11 @@ a img{
 	margin:auto;
 }
 
-.form-control {
-	margin-left: 118px;
+.search-form-control {
+	
+}
+.d-inline-block {
+	width: 44%;
 }
 
 }

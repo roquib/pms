@@ -49652,8 +49652,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/abdur/practice/laravel/Patient-Management-System/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/abdur/practice/laravel/Patient-Management-System/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Md Moman Shekh\Desktop\pms\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Md Moman Shekh\Desktop\pms\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
