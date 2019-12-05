@@ -4,7 +4,7 @@
 
 <div class="header_register"> 
 
-    <p class="text-center name "> {{ __('Patient Register') }}</p>
+    <p class="text-center name "> {{ __('Patient Registration') }}</p>
 	
 		<form class="container" method="POST" action="{{ route('register') }}">
 		
