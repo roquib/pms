@@ -11,9 +11,7 @@
                 </h6>
 
             </div>
-            <h6 class="display-4">
-                this is for testing
-            </h6>
+
         </div>
         <div class="form-row ">
 
@@ -216,11 +214,9 @@
 </div>
 @endsection
 @section('css')
-    <style>
-        .display-4 {
-            font-size: 48px;
-        }
-    </style>
+<style>
+
+</style>
 @endsection
 @section('js')
 <script>
