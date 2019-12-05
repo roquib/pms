@@ -4752,7 +4752,7 @@ input[type=button].btn-block {
   }
 }
 
-@media (min-width: 1170px) {
+@media (min-width: 992px) {
   .navbar-expand-lg {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -11100,7 +11100,7 @@ a.text-dark:focus {
   }
 }
 
-@media (min-width: 1170px) {
+@media (min-width: 1126px) {
   .navbar-expand-lg {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
