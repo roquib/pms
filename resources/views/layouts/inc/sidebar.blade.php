@@ -11,7 +11,7 @@
                         @endif
                     </div>
                     <div class="sidebar-profile-details">
-                        <span>{{Auth::user()->name}}<br><small>
+                        <span class="user-detail-style">{{Auth::user()->name}}<br><small class="admin-style">
                                 @can('isAdmin')
                                 Admin
                                 @elsecan('isDoctorAdmin')
@@ -36,7 +36,7 @@
                     <p>Dashboard</p>
                 </a></li>
 
-            <li><a href="{{route('profile')}}" class="waves-effect waves-button"><span
+            <li ><a  href="{{route('profile')}}" class="waves-effect waves-button"><span
                         class="menu-icon glyphicon glyphicon-user"></span>
                     <p>Profile</p>
                 </a></li>
@@ -56,47 +56,8 @@
                 </a></li>
 
 
-            <!--form elements
-                        
-                        
-                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-edit"></span><p>Forms</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
-                                <li><a href="form-elements.html">Form Elements</a></li>
-                                <li><a href="form-wizard.html">Form Wizard</a></li>
-                                <li><a href="form-upload.html">File Upload</a></li>
-                                <li><a href="form-image-crop.html">Image Crop</a></li>
-                                <li><a href="form-select2.html">Select2</a></li>
-                                <li><a href="form-x-editable.html">X-editable</a></li>
-                            </ul>
-        
-                        </li>
-                        
-                        
-                        
-                        -->
-
-
-
-
-            <!--login form-->
-
-
-
-
-            <li class="droplink"><a href="#" class="waves-effect waves-button"><span
-                        class="menu-icon glyphicon glyphicon-log-in"></span>
-                    <p>Login</p><span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li><a href="login.html">Login Form</a></li>
-                    <li><a href="register.html">Register Form</a></li>
-                    <li><a href="forgot.html">Forgot Password</a></li>
-
-                </ul>
-            </li>
-
-
-
+          
+            
 
 
             <!--google map-->
@@ -125,7 +86,7 @@
 
                     <li><a href="calendar.html">Calendar</a></li>
 
-                    <li><a href="contact.html">Contact</a></li>
+                    
                 </ul>
             </li>
             @endcan

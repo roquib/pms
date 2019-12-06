@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="page-inner">
-    <div class="profile-cover" style="margin-top: -61px;">
+    <div class="profile-cover" {{--style="margin-top: -61px;"--}}>
         <div class="row">
             <div class="col-md-3 profile-image">
                 <div class="profile-image-container">
@@ -21,10 +21,10 @@
         <div class="row">
             <div class="col-md-3 user-profile">
                 <h3 class="text-center">{{Auth::user()->name}}</h3>
-                <p class="text-center">{{Auth::user()->role->name}}</p>
+                <p class="text-center role-name--style">{{Auth::user()->role->name}}</p>
                 <hr>
                 <ul class="list-unstyled text-center">
-                    <li><i class="fa fa-phone m-r-xs"></i>017++
+                    <li><i class="fa fa-phone m-r-xs"></i>{{Auth::user()->phone}}
                     </li>
                     <li>
                         <p><i class="fa fa-map-marker m-r-xs"></i>Melbourne, Australia</p>
@@ -32,7 +32,7 @@
                     <li>
                         <p>
                             <i class="fa fa-envelope m-r-xs"></i>
-                            <a href="#">example@mail.com</a>
+                            <a >{{Auth::user()->email}}</a>
                         </p>
                     </li>
 
