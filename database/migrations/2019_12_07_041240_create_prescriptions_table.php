@@ -18,6 +18,8 @@ class CreatePrescriptionsTable extends Migration
             $table->string('disease', 255);
             $table->string('test', 255);
             $table->string('medicine', 255);
+            $table->string('date', 255);
+            $table->string('time', 255);
             $table->integer('patient_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->timestamps();

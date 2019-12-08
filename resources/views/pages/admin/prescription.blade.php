@@ -27,8 +27,8 @@
                             <div class="col-md-12 me" style="font-size: 20px;">
                                 <div class="container">
 
-                                    <form>
-
+                                    <form method="POST" action="{{route('prescription.store')}}">
+                                        @csrf
                                         <div class="form-row ">
 
                                             <div class="col-sm-12">
@@ -46,7 +46,7 @@
                                         <div class="form-group row ">
                                             <div class="col-sm-3  ml-3">
 
-                                                <h6 class="doctor_name">Doctor Name:-....</h6>
+                                                <h6 class="doctor_name">Doctor Name:-{{Auth::user()->name}}</h6>
                                                 <h6 class="doctor_name">Specialty:-....</h6>
                                                 <h6 class="doctor_name">Phone:-....</h6>
                                                 <h6 class="doctor_name">Reg No:-....</h6>
@@ -61,9 +61,10 @@
                                         <hr style=" border: 1px solid #2B384E; " />
 
                                         <div class="form-group row ml-3 ">
-                                            <div class="col-sm-3">Patients Id:...</div>
-                                            <div class="col-sm-3">Name:...</div>
-                                            <div class="col-sm-3">Sex...</div>
+                                            <div class="col-sm-3">Patients Id: {{$patient->id}}</div>
+                                            <input type="hidden" name="patientid" value="{{$patient->id}}">
+                                            <div class="col-sm-3">Name: {{$patient->name}}</div>
+                                            <div class="col-sm-3">Sex: {{$patient->gender}}</div>
                                             <div class="col-sm-3">Age:...</div>
                                         </div>
 
@@ -84,18 +85,18 @@
 
                                                 </div>
                                                 <tr>
-
-                                                    <td><textarea class="form-control" name="" id=""
+                                                    {{dd($id)}}
+                                                    <td><textarea class="form-control" name="disease" id=""
                                                             placeholder="Type your text" rows="3"
                                                             style=" width:90%;"></textarea> </td>
-                                                    <td><textarea class="form-control" name="" id=""
+                                                    <td><textarea class="form-control" name="test" id=""
                                                             placeholder="Type your text" rows="3"
                                                             style=" width:90%;"></textarea> </td>
-                                                    <td><textarea class="form-control" name="" id=""
+                                                    <td><textarea class="form-control" name="medicine" id=""
                                                             placeholder="Type your text" rows="3"
                                                             style=" width:90%;"></textarea> </td>
-                                                    <td> <input type="date" value="" name="" class="form-control" />
-                                                        <input type="time" value="" name="" class="form-control" />
+                                                    <td> <input type="date" value="" name="date" class="form-control" />
+                                                        <input type="time" value="" name="time" class="form-control" />
 
 
                                                     </td>

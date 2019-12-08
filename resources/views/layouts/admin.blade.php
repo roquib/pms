@@ -33,6 +33,7 @@
 
     <script src="{{asset('admin/assets/plugins/3d-bold-navigation/js/modernizr.js')}}"></script>
     <script src="{{asset('admin/assets/plugins/offcanvasmenueffects/js/snap.svg-min.js')}}"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     {{-- <link rel="stylesheet" href="{{asset('css/app.css')}}"> --}}
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,18 +46,13 @@
 
 <body class="page-header-fixed">
     <div class="overlay"></div>
-
-
-
-    <form class="search-form" action="#" method="GET">
-        <div class="input-group">
-            <input type="text" name="search" class="form-control search-input" placeholder="Search...">
-            <span class="input-group-btn">
-                <button class="btn btn-default close-search waves-effect waves-button waves-classic" type="button"><i
-                        class="fa fa-times"></i></button>
-            </span>
-        </div><!-- Input Group -->
-    </form><!-- Search Form -->
+    <div class="input-group">
+        <input type="text" name="search" id="search" class="form-control search-input" placeholder="Search...">
+        <span class="input-group-btn">
+            <button class="btn btn-default close-search waves-effect waves-button waves-classic" type="button"><i
+                    class="fa fa-times"></i></button>
+        </span>
+    </div><!-- Input Group -->
 
     <div id="app">
         <main class="page-content content-wrap">
@@ -85,7 +81,32 @@
     <script src="{{asset('admin/assets/plugins/waves/waves.min.js')}}"></script>
     <script src="{{asset('admin/assets/plugins/3d-bold-navigation/js/main.js')}}"></script>
     <script src="{{asset('admin/assets/js/modern.min.js')}}"></script>
-
+    <script type="text/javascript">
+        $('#search').on('keyup',function(){
+    $value=$(this).val();
+    $.ajax({
+    type : 'get',
+    url : '{{URL::to('search')}}',
+    data:{'search':$value},
+    success:function(data){
+        // console.log(data);
+        // $('#search').autocomplete({
+        //     source: data
+        // });
+        var patient = [];
+        $.each(data, function(key,value){
+            patient.push(value.name);
+        });
+        // $( "#search" ).autocomplete({
+        // source: patient
+        // });
+        console.log(patient);
+    }
+    });
+    })
+    </script>
+    <script type="text/javascript">
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
 </body>
 
 </html>

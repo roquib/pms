@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Auth;
+use DB;
 
 class PageController extends Controller
 {
@@ -19,6 +20,22 @@ class PageController extends Controller
     {
         $patient = Patient::findOrFail($id);
         return view('pages.admin.show', ['patient' => $patient]);
+    }
+    public function search(Request $request)
+    {
+        if ($request->ajax()) {
+            $output = "";
+            $products = DB::table('patients')->where('name', 'LIKE', '%' . $request->search . "%")->get();
+            // if ($products) {
+            //     foreach ($products as $key => $product) {
+            //         $output .= '<li>' .
+            //             "<a href='/patient/$product->id'>" . $product->name . '</a>' .
+            //             '</li><br>';
+            //     }
+            //     return Response($output);
+            // }
+            return $products;
+        }
     }
     public function appointmentConfirm(Request $request)
     {

@@ -52,14 +52,17 @@
                                                 <ul class="dropdown-menu"
                                                     style="background-color:#6A5FAC; color: black;">
                                                     <li><a style="color: black;"
-                                                            href="{{route('prescription.doc',1)}}">Prescription
+                                                            class="{{($id ?? '' == null) ? "disabled" : ''}}"
+                                                            href="{{route('prescription.doc',['id'=>1,'patientid' => $patient->id])}}">Prescription
                                                             1</a>
                                                     </li>
                                                     <li><a style=" color: black;"
-                                                            href="{{route('prescription.doc',2)}}">Prescription 2</a>
+                                                            href="{{route('prescription.doc',['id'=>2,'patientid' => $patient->id])}}">Prescription
+                                                            2</a>
                                                     </li>
                                                     <li><a style="color: black;"
-                                                            href="{{route('prescription.doc',3)}}">Prescription 3</a>
+                                                            href="{{route('prescription.doc',['id'=>3,'patientid' => $patient->id])}}">Prescription
+                                                            3</a>
                                                     </li>
                                                 </ul>
                                             </div>
