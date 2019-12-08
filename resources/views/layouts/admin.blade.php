@@ -46,14 +46,6 @@
 
 <body class="page-header-fixed">
     <div class="overlay"></div>
-    <div class="input-group">
-        <input type="text" name="search" id="search" class="form-control search-input" placeholder="Search...">
-        <span class="input-group-btn">
-            <button class="btn btn-default close-search waves-effect waves-button waves-classic" type="button"><i
-                    class="fa fa-times"></i></button>
-        </span>
-    </div><!-- Input Group -->
-
     <div id="app">
         <main class="page-content content-wrap">
             @include('layouts.inc.navbar')
@@ -95,12 +87,18 @@
         // });
         var patient = [];
         $.each(data, function(key,value){
-            patient.push(value.name);
+            if(value.id ==null) {
+                var val = `<li>${value.name}</li>`;
+                patient.push(val);
+            }else {
+                var val = `<li><a href="/patient/${value.id}">${value.name}</a></li>`;
+                patient.push(val);
+            }
         });
         // $( "#search" ).autocomplete({
         // source: patient
         // });
-        console.log(patient);
+        $('ul#list').html(patient);
     }
     });
     })

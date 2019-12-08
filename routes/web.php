@@ -14,6 +14,7 @@ Route::group(['middleware' => ['authen', 'roles']], function () {
 	Route::get('/prescription/{id}/patient/{patientid}', ['as' => 'prescription.doc', 'uses' => 'PrescriptionController@prescriptionDoc']);
 	Route::post('/prescription/store', ['as' => 'prescription.store', 'uses' => 'PrescriptionController@prescriptionStore']);
 	Route::get('/patients/{id}', ['middleware' => ['auth'], 'as' => 'showPatient', 'uses' => 'PageController@showPatient']);
+	Route::post('/delete/{id}',[ 'as' => 'delete','uses'=>'DashboardController@destroy']);
 	Route::get('/search', ['as' => 'search', 'uses' => 'PageController@search']);
 });
 Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin']], function () { });

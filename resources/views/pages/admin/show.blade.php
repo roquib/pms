@@ -26,7 +26,56 @@
 							<!--table-->
 
 							<div class="col-md-12">
-								<h1 class="display-4">{{$patient->name}}</h1>
+								<h1>About Patient</h1>
+								<table class="table">
+									<thead>
+										<tr>
+											<th>Id</th>
+											<th>Name</th>
+											<th>Phone</th>
+											<th>Gender</th>
+											<th>Address</th>
+											<th>Date</th>
+											<th>Department</th>
+											<th>doctor</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>{{ $patient->id }}</td>
+											<td>{{ $patient->name }}</td>
+											<td>{{ $patient->phone }}</td>
+											<td>{{$patient->gender}}</td>
+											<td>{{ $patient->address }}</td>
+											<td>{{ $patient->date }}</td>
+											<td>{{ $patient->department }}</td>
+											<td>{{ $patient->user($patient->doctor)->name }}</td>
+										</tr>
+									</tbody>
+								</table>
+								<h1>Prescription Table</h1>
+								@foreach ($prescriptions as $prescription)
+								<table class="table">
+									<thead>
+										<tr>
+											<th>Disease</th>
+											<th>Test</th>
+											<th>Medicine</th>
+											<th>Date</th>
+											<th>Time</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>{{ $prescription->disease }}</td>
+											<td>{{ $prescription->test }}</td>
+											<td>{{ $prescription->medicine }}</td>
+											<td>{{ $prescription->date }}</td>
+											<td>{{ $prescription->time }}</td>
+										</tr>
+									</tbody>
+								</table>
+								@endforeach
 							</div>
 
 

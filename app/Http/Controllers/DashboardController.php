@@ -25,7 +25,9 @@ class DashboardController extends Controller
     }
     public function allPatient()
     {
-        $patients = Patient::all();
+        $id = Auth::id();
+        $patients = DB::table('patients')->where('doctor',$id)->get();
+        // dd($patients,$id);
         return view('pages.admin.allpatient', ['patients' => $patients]);
     }
     public function allAdmins()
@@ -39,5 +41,10 @@ class DashboardController extends Controller
     public function setting()
     {
         return view('pages.admin.setting');
+    }
+    public function destroy($id)
+    {
+        DB::table('patients')->where('id',$id)->delete();
+        return back();
     }
 }

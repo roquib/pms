@@ -10,6 +10,16 @@
             </ol>
         </div>
     </div>
+    <div class="input-group">
+        <input type="text" name="search" id="search" class="form-control search-input" placeholder="Search...">
+        <span class="input-group-btn">
+            <button class="btn btn-default close-search waves-effect waves-button waves-classic" type="button"><i
+                    class="fa fa-times"></i></button>
+        </span>
+    </div><!-- Input Group -->
+    <div id="result">
+        <ul id="list"></ul>
+    </div>
     <div id="main-wrapper">
         <div class="row">
             <div class="invoice col-md-12">
@@ -43,8 +53,6 @@
                                         <td>
                                             <a href="{{route('showPatient',$patient->id)}}"
                                                 class="btn btn-primary">View</a>
-                                            <button type="text" class="btn btn-danger">Delete</button>
-
                                             <div class="dropdown btn-group">
                                                 <button class="btn btn-primary dropdown-toggle" type="button"
                                                     data-toggle="dropdown">Prescription

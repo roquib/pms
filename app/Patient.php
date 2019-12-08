@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use DB;
 class Patient extends Model
 {
     protected $fillable = [
@@ -15,4 +15,8 @@ class Patient extends Model
         'date',
         'address'
     ];
+    public function user($id)
+    {
+    	return DB::table('users')->where('id',$id)->get()->first();
+    }
 }

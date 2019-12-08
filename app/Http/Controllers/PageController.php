@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use App\Patient;
+use App\Prescription;
 use App\User;
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Http\Request;
 use Auth;
 use DB;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class PageController extends Controller
 {
@@ -19,12 +20,16 @@ class PageController extends Controller
     public function showPatient($id)
     {
         $patient = Patient::findOrFail($id);
-        return view('pages.admin.show', ['patient' => $patient]);
+        $prescriptions = Prescription::where('patient_id',$id)->take(3)->get();
+        return view('pages.admin.show', ['patient' => $patient,'prescriptions'=>$prescriptions]); 
     }
     public function search(Request $request)
     {
         if ($request->ajax()) {
             $output = "";
+            if (empty($request->search)) {
+                return [["name" =>"no data found","id"=>null]];
+            } else {
             $products = DB::table('patients')->where('name', 'LIKE', '%' . $request->search . "%")->get();
             // if ($products) {
             //     foreach ($products as $key => $product) {
@@ -35,6 +40,7 @@ class PageController extends Controller
             //     return Response($output);
             // }
             return $products;
+        }
         }
     }
     public function appointmentConfirm(Request $request)
