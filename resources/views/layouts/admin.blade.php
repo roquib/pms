@@ -91,7 +91,7 @@
                 var val = `<li>${value.name}</li>`;
                 patient.push(val);
             }else {
-                var val = `<li><a href="/patient/${value.id}">${value.name}</a></li>`;
+                var val = `<li><a href="/patient/${value.id}">${value.id}</a></li>`;
                 patient.push(val);
             }
         });

@@ -36,7 +36,7 @@
                     <p>Dashboard</p>
                 </a></li>
 
-            <li ><a  href="{{route('profile')}}" class="waves-effect waves-button"><span
+            <li><a href="{{route('profile')}}" class="waves-effect waves-button"><span
                         class="menu-icon glyphicon glyphicon-user"></span>
                     <p>Profile</p>
                 </a></li>
@@ -44,9 +44,26 @@
 
             <!--page patients elements-->
 
-            <li><a href="{{route('allPatient')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
+            <li>
+                @can('isAdmin')
+                <a href="{{route('allPatient')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
                     <p>Patients</p>
-                </a></li>
+                </a>
+                @elsecan('isDoctorAdmin')
+                <a href="{{route('allPatient')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
+                    <p>Patients</p>
+                </a>
+                @elsecan('isHelpDesk')
+                @elsecan('isBillAdmin')
+                <a href="{{route('bill.admin')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
+                    <p>Patients</p>
+                </a>
+                @elsecan('isTestAdmin')
+                <a href="{{route('allPatient')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
+                    <p>Patients</p>
+                </a>
+                @endcan
+            </li>
 
 
             <!--page admin elements-->
@@ -56,8 +73,8 @@
                 </a></li>
 
 
-          
-            
+
+
 
 
             <!--google map-->
@@ -86,7 +103,7 @@
 
                     <li><a href="calendar.html">Calendar</a></li>
 
-                    
+
                 </ul>
             </li>
             @endcan

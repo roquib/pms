@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Auth;
 use DB;
 use App\Patient;
+use App\Prescription;
 
 class DashboardController extends Controller
 {
@@ -23,10 +24,19 @@ class DashboardController extends Controller
     {
         return view('pages.admin.profile');
     }
+    public function payment()
+    {
+        return view('pages.admin.payment');
+    }
+    public function bill()
+    {
+        $prescription = Prescription::latest()->get();
+        return view('pages.admin.bill', ['prescription' => $prescription]);
+    }
     public function allPatient()
     {
         $id = Auth::id();
-        $patients = DB::table('patients')->where('doctor',$id)->get();
+        $patients = DB::table('patients')->where('doctor', $id)->get();
         // dd($patients,$id);
         return view('pages.admin.allpatient', ['patients' => $patients]);
     }
@@ -44,7 +54,7 @@ class DashboardController extends Controller
     }
     public function destroy($id)
     {
-        DB::table('patients')->where('id',$id)->delete();
+        DB::table('patients')->where('id', $id)->delete();
         return back();
     }
 }
