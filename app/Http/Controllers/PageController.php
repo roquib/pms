@@ -15,6 +15,11 @@ class PageController extends Controller
     {
         return view('patients.home');
     }
+    public function showPatient($id)
+    {
+        $patient = Patient::findOrFail($id);
+        return view('pages.admin.show', ['patient' => $patient]);
+    }
     public function appointmentConfirm(Request $request)
     {
         // dd($request);

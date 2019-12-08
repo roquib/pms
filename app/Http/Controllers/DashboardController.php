@@ -7,6 +7,7 @@ use App\UserDetail;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+use App\Patient;
 
 class DashboardController extends Controller
 {
@@ -24,7 +25,8 @@ class DashboardController extends Controller
     }
     public function allPatient()
     {
-        return view('pages.admin.allpatient');
+        $patients = Patient::all();
+        return view('pages.admin.allpatient', ['patients' => $patients]);
     }
     public function allAdmins()
     {

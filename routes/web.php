@@ -11,6 +11,8 @@ Route::group(['middleware' => ['authen', 'roles']], function () {
 	Route::get('/admin/view/{id}', ['as' => 'view-admin', 'uses' => 'DashboardController@viewAdmin']);
 	Route::get('/admin/setting', ['as' => 'setting', 'uses' => 'DashboardController@setting']);
 	Route::get('/patient/all', ['as' => 'allPatient', 'uses' => 'DashboardController@allPatient']);
+	Route::get('/prescription/{id}', ['as' => 'prescription.doc', 'uses' => 'PrescriptionController@prescriptionDoc']);
+	Route::get('/patients/{id}', ['middleware' => ['auth'], 'as' => 'showPatient', 'uses' => 'PageController@showPatient']);
 });
 Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin']], function () { });
 Route::get('/noPermission', function () {
