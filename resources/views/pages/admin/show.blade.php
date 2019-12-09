@@ -53,8 +53,11 @@
 										</tr>
 									</tbody>
 								</table>
-								<h1>Prescription Table</h1>
+								@php
+								$index = 1;
+								@endphp
 								@foreach ($prescriptions as $prescription)
+								<h1>Prescription Table {{$index++}}</h1>
 								<table class="table">
 									<thead>
 										<tr>
@@ -68,8 +71,24 @@
 									<tbody>
 										<tr>
 											<td>{{ $prescription->disease }}</td>
-											<td>{{ $prescription->test }}</td>
-											<td>{{ $prescription->medicine }}</td>
+											<td>
+												<ul>
+													@foreach ($prescription->tests($prescription->patient_id,$prescription->id) as $pres)
+													<li>
+														{{$pres->name}}
+													</li>
+													@endforeach
+												</ul>
+											</td>
+											<td>
+												<ul>
+													@foreach ($prescription->medicines($prescription->patient_id,$prescription->id) as $pres)
+													<li>
+														{{$pres->name}}
+													</li>
+													@endforeach
+												</ul>
+											</td>
 											<td>{{ $prescription->date }}</td>
 											<td>{{ $prescription->time }}</td>
 										</tr>

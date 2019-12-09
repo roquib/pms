@@ -45,12 +45,10 @@
 
                                         <div class="form-group row ">
                                             <div class="col-sm-3  ml-3">
-
-                                                <h6 class="doctor_name">Doctor Name:-{{Auth::user()->name}}</h6>
-                                                <h6 class="doctor_name">Specialty:-....</h6>
-                                                <h6 class="doctor_name">Phone:-....</h6>
-                                                <h6 class="doctor_name">Reg No:-....</h6>
-                                                <h6 class="doctor_name">date:-....</h6>
+                                                <h3 class="doctor_name">Doctor Name:-{{Auth::user()->name}}</h3>
+                                                <h3 class="doctor_name">Specialty:- Neurologist</h3>
+                                                <h3 class="doctor_name">Phone:- {{Auth::user()->phone}}</h3>
+                                                <h3 class="doctor_name">date:- 20/12/16</h3>
 
 
                                             </div>
@@ -85,20 +83,35 @@
 
                                                 </div>
                                                 <tr>
-                                                    {{dd($id)}}
-                                                    <td><textarea class="form-control" name="disease" id=""
+                                                    <td>
+                                                        <textarea class="form-control" name="disease" id=""
                                                             placeholder="Type your text" rows="3"
-                                                            style=" width:90%;"></textarea> </td>
-                                                    <td><textarea class="form-control" name="test" id=""
+                                                            style=" width:90%;"></textarea>
+                                                    </td>
+                                                    <td>
+                                                        {{-- <textarea class="form-control" name="test" id=""
                                                             placeholder="Type your text" rows="3"
-                                                            style=" width:90%;"></textarea> </td>
-                                                    <td><textarea class="form-control" name="medicine" id=""
+                                                            style=" width:90%;"></textarea>  --}}
+                                                        <div class="input-group mb-3">
+                                                            <select class="custom-select" id="test" name="tests[]"
+                                                                multiple="multiple">
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        {{-- <textarea class="form-control" name="medicine" id=""
                                                             placeholder="Type your text" rows="3"
-                                                            style=" width:90%;"></textarea> </td>
-                                                    <td> <input type="date" value="" name="date" class="form-control" />
+                                                            style=" width:90%;"></textarea>  --}}
+                                                        <div class="input-group mb-3">
+                                                            <select class="custom-select" name="medicines[]"
+                                                                id="medicine" multiple="multiple">
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <input type="hidden" name="prescription_id" value="{{$id}}">
+                                                        <input type="date" name="date" class="form-control"></p>
                                                         <input type="time" value="" name="time" class="form-control" />
-
-
                                                     </td>
 
                                                 </tr>
@@ -152,4 +165,30 @@
         margin-top: 70px;
     }
 </style>
+@endsection
+@section('js')
+<script>
+    loadTests();
+    loadMedicines();
+    function loadTests() {
+        $.post(`{{route('test')}}`,function(data){
+        $.each(data,function(i,ll){
+            $('#test').append($('<option/>',{
+                value: ll.name,
+                text: ll.test
+            }));
+        });
+        });
+    }
+    function loadMedicines() {
+        $.post(`{{route('medicine')}}`,function(data){
+        $.each(data,function(i,ll){
+            $('#medicine').append($('<option/>',{
+                value: ll.name,
+                text: ll.name
+            }));
+        });
+        });
+    }
+</script>
 @endsection

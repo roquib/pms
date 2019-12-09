@@ -13,7 +13,6 @@
     <meta name="author" content="Steelcoders" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Styles -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
     <link href="{{asset('admin/assets/plugins/pace-master/themes/blue/pace-theme-flash.css')}}" rel="stylesheet" />
     <link href="{{asset('admin/assets/plugins/uniform/css/uniform.default.min.css')}}" rel="stylesheet" />
     <link href="{{asset('admin/assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
@@ -74,37 +73,9 @@
     <script src="{{asset('admin/assets/plugins/3d-bold-navigation/js/main.js')}}"></script>
     <script src="{{asset('admin/assets/js/modern.min.js')}}"></script>
     <script type="text/javascript">
-        $('#search').on('keyup',function(){
-    $value=$(this).val();
-    $.ajax({
-    type : 'get',
-    url : '{{URL::to('search')}}',
-    data:{'search':$value},
-    success:function(data){
-        // console.log(data);
-        // $('#search').autocomplete({
-        //     source: data
-        // });
-        var patient = [];
-        $.each(data, function(key,value){
-            if(value.id ==null) {
-                var val = `<li>${value.name}</li>`;
-                patient.push(val);
-            }else {
-                var val = `<li><a href="/patient/${value.id}">${value.id}</a></li>`;
-                patient.push(val);
-            }
-        });
-        // $( "#search" ).autocomplete({
-        // source: patient
-        // });
-        $('ul#list').html(patient);
-    }
-    });
-    })
-    </script>
-    <script type="text/javascript">
         $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+    </script>
+    @yield('js')
 </body>
 
 </html>

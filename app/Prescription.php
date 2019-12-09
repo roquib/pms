@@ -22,4 +22,12 @@ class Prescription extends Model
     {
         return DB::table('users')->where('id', $id)->get()->first();
     }
+    public function tests($patientId, $prescriptionId)
+    {
+        return DB::table('save_tests')->where('patient_id', $patientId)->where('prescription_id', $prescriptionId)->get();
+    }
+    public function medicines($patientId, $prescriptionId)
+    {
+        return DB::table('save_medicines')->where('patient_id', $patientId)->where('prescription_id', $prescriptionId)->get();
+    }
 }

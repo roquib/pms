@@ -28,6 +28,10 @@ class DashboardController extends Controller
     {
         return view('pages.admin.payment');
     }
+    public function billPayment()
+    {
+        return view('pages.admin.billPayment');
+    }
     public function bill()
     {
         $prescription = Prescription::latest()->get();
