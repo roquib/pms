@@ -10,10 +10,11 @@
             </ol>
         </div>
     </div>
-    
+
     <div class="input-group" style="
     text-align: center; margin: auto;padding-top: 30px;">
-        <input type="text" name="search" id="search" class="form-control search-input search-design" placeholder="Search... "style="
+        <input type="text" name="search" id="search" class="form-control search-input search-design"
+            placeholder="Search... " style="
                
                 border-radius: 10px;
                 line-height: 112px;
@@ -26,10 +27,10 @@
                 width: 142%;
                 
             
-        " >
-       
+        ">
+
     </div><!-- Input Group -->
-    
+
 
     <div id="result" class="text-center">
         <ul id="list" style="list-style:none; font-size: 17px;
@@ -43,7 +44,7 @@
                         <div class="row">
                             <div class="col-md-12 text-right">
 
-                                
+
                             </div>
 
 
@@ -115,7 +116,6 @@
     </div>
 </div>
 @endsection
-<<<<<<< HEAD
 
 @section('css')
 <style>
@@ -131,7 +131,6 @@
         font-style: italic;
     }
 </style>
-=======
 @section('js')
 <script type="text/javascript">
     $('#search').on('keyup',function(){
@@ -164,5 +163,4 @@
             })
 </script>
 
->>>>>>> 81e8c38b6c89e50f9f860713b57f9bbbffc399c8
 @endsection

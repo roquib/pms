@@ -12,6 +12,7 @@ Route::group(['middleware' => ['authen', 'roles', 'auth']], function () {
 	Route::get('/admin/setting', ['as' => 'setting', 'uses' => 'DashboardController@setting']);
 	Route::get('/patient/all', ['as' => 'allPatient', 'uses' => 'DashboardController@allPatient']);
 	Route::get('/patient/{id}/payment', ['as' => 'bill.payment', 'uses' => 'DashboardController@billPayment']);
+	Route::get('/patient/{id}/payment/confirm', ['as' => 'bill.payment.confirm', 'uses' => 'DashboardController@billPaymentConfirm']);
 	Route::get('/patient/all/bill', ['as' => 'bill.admin', 'uses' => 'DashboardController@bill']);
 	Route::get('/prescription/{id}/patient/{patientid}', ['as' => 'prescription.doc', 'uses' => 'PrescriptionController@prescriptionDoc']);
 	Route::get('/bill/payment', ['as' => 'payment', 'uses' => 'DashboardController@payment']);

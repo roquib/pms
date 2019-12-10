@@ -46,23 +46,20 @@
 
                                     </tr>
                                     @foreach ($prescription as $pres)
+                                    @foreach ($pres->patients($pres->patient_id) as $patient)
                                     <tr>
-                                        <td>{{$pres->patient->id}}</td>
-                                        <td>{{$pres->patient->name}}</td>
-                                        <td>{{$pres->doctr($pres->user_id)->name}}</td>
+                                        <td>{{$patient->id}}</td>
+                                        <td>{{$patient->name}}</td>
+                                        <td>{{$pres->daktar($patient->doctor)->name}}</td>
                                         <td>
-                                            <a href="{{route('showPatient',$pres->patient->id)}}"
-                                                class="btn btn-primary">View</a>
+                                            <a href="{{route('bill.payment.confirm',['id' => $patient->id])}}">View</a>
                                         </td>
                                     </tr>
+                                    @endforeach
                                     @endforeach
 
                                 </table>
                             </div>
-
-
-
-
                         </div>
                         <!--row-->
                     </div>

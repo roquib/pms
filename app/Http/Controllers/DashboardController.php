@@ -9,6 +9,8 @@ use Auth;
 use DB;
 use App\Patient;
 use App\Prescription;
+use App\SaveMedicine;
+use App\SaveTest;
 
 class DashboardController extends Controller
 {
@@ -32,9 +34,17 @@ class DashboardController extends Controller
     {
         return view('pages.admin.billPayment');
     }
+    public function billPaymentConfirm($id)
+    {
+        $patient = Patient::findOrFail($id);
+        $prescriptions = Prescription::where('patient_id', $id)->take(3)->get();
+        $tests = SaveTest::where('patient_id', $id)->where('prescription_id',)->get();
+        $medicines = SaveMedicine::where('patient_id', $id)->get();
+        return view('pages.admin.billPaymentConfirm', ['patient' => $patient, 'prescriptions' => $prescriptions, 'tests' => $tests, 'medicines' => $medicines]);
+    }
     public function bill()
     {
-        $prescription = Prescription::latest()->get();
+        $prescription = Prescription::select('patient_id')->distinct()->get();
         return view('pages.admin.bill', ['prescription' => $prescription]);
     }
     public function allPatient()
