@@ -3,18 +3,21 @@
 
 Route::get('/admin/login', ['as' => 'admin.login', 'uses' => 'LoginController@getLogin']);
 Route::post('/admin/login', ['as' => 'admin.login', 'uses' => 'LoginController@postLogin']);
-Route::group(['middleware' => ['authen', 'roles']], function () {
-	Route::post('/admin/logout', ['as' => 'admin.logout', 'uses' => 'LoginController@getLogout']);
+Route::post('/admin/logout', ['as' => 'admin.logout', 'uses' => 'LoginController@getLogout']);
+Route::group(['middleware' => ['authen', 'roles', 'auth']], function () {
 	Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@dashboard']);
 	Route::get('/admin/profile', ['as' => 'profile', 'uses' => 'DashboardController@profile']);
 	Route::get('/admin/all', ['as' => 'all-admins', 'uses' => 'DashboardController@allAdmins']);
 	Route::get('/admin/view/{id}', ['as' => 'view-admin', 'uses' => 'DashboardController@viewAdmin']);
 	Route::get('/admin/setting', ['as' => 'setting', 'uses' => 'DashboardController@setting']);
 	Route::get('/patient/all', ['as' => 'allPatient', 'uses' => 'DashboardController@allPatient']);
+	Route::get('/patient/{id}/payment', ['as' => 'bill.payment', 'uses' => 'DashboardController@billPayment']);
+	Route::get('/patient/all/bill', ['as' => 'bill.admin', 'uses' => 'DashboardController@bill']);
 	Route::get('/prescription/{id}/patient/{patientid}', ['as' => 'prescription.doc', 'uses' => 'PrescriptionController@prescriptionDoc']);
+	Route::get('/bill/payment', ['as' => 'payment', 'uses' => 'DashboardController@payment']);
 	Route::post('/prescription/store', ['as' => 'prescription.store', 'uses' => 'PrescriptionController@prescriptionStore']);
 	Route::get('/patients/{id}', ['middleware' => ['auth'], 'as' => 'showPatient', 'uses' => 'PageController@showPatient']);
-	Route::post('/delete/{id}',[ 'as' => 'delete','uses'=>'DashboardController@destroy']);
+	Route::post('/delete/{id}', ['as' => 'delete', 'uses' => 'DashboardController@destroy']);
 	Route::get('/search', ['as' => 'search', 'uses' => 'PageController@search']);
 });
 Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin']], function () { });

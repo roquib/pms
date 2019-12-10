@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Department;
 use App\Patient;
 use App\Prescription;
+use App\SaveMedicine;
+use App\SaveTest;
 use App\User;
 use Auth;
 use DB;
@@ -20,27 +22,29 @@ class PageController extends Controller
     public function showPatient($id)
     {
         $patient = Patient::findOrFail($id);
-        $prescriptions = Prescription::where('patient_id',$id)->take(3)->get();
-        return view('pages.admin.show', ['patient' => $patient,'prescriptions'=>$prescriptions]); 
+        $prescriptions = Prescription::where('patient_id', $id)->take(3)->get();
+        $tests = SaveTest::where('patient_id', $id)->where('prescription_id',)->get();
+        $medicines = SaveMedicine::where('patient_id', $id)->get();
+        return view('pages.admin.show', ['patient' => $patient, 'prescriptions' => $prescriptions, 'tests' => $tests, 'medicines' => $medicines]);
     }
     public function search(Request $request)
     {
         if ($request->ajax()) {
             $output = "";
             if (empty($request->search)) {
-                return [["name" =>"no data found","id"=>null]];
+                return [["name" => "no data found", "id" => null]];
             } else {
-            $products = DB::table('patients')->where('name', 'LIKE', '%' . $request->search . "%")->get();
-            // if ($products) {
-            //     foreach ($products as $key => $product) {
-            //         $output .= '<li>' .
-            //             "<a href='/patient/$product->id'>" . $product->name . '</a>' .
-            //             '</li><br>';
-            //     }
-            //     return Response($output);
-            // }
-            return $products;
-        }
+                $products = DB::table('patients')->where('name', 'LIKE', '%' . $request->search . "%")->get();
+                // if ($products) {
+                //     foreach ($products as $key => $product) {
+                //         $output .= '<li>' .
+                //             "<a href='/patient/$product->id'>" . $product->name . '</a>' .
+                //             '</li><br>';
+                //     }
+                //     return Response($output);
+                // }
+                return $products;
+            }
         }
     }
     public function appointmentConfirm(Request $request)

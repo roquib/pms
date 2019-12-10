@@ -115,6 +115,7 @@
     </div>
 </div>
 @endsection
+<<<<<<< HEAD
 
 @section('css')
 <style>
@@ -130,4 +131,38 @@
         font-style: italic;
     }
 </style>
+=======
+@section('js')
+<script type="text/javascript">
+    $('#search').on('keyup',function(){
+            $value=$(this).val();
+            $.ajax({
+            type : 'get',
+            url : '{{URL::to('search')}}',
+            data:{'search':$value},
+            success:function(data){
+                // console.log(data);
+                // $('#search').autocomplete({
+                //     source: data
+                // });
+                var patient = [];
+                $.each(data, function(key,value){
+                    if(value.id ==null) {
+                        var val = `<li>${value.name}</li>`;
+                        patient.push(val);
+                    }else {
+                        var val = `<li><a href="/patient/${value.id}">${value.id}</a></li>`;
+                        patient.push(val);
+                    }
+                });
+                // $( "#search" ).autocomplete({
+                // source: patient
+                // });
+                $('ul#list').html(patient);
+            }
+            });
+            })
+</script>
+
+>>>>>>> 81e8c38b6c89e50f9f860713b57f9bbbffc399c8
 @endsection
