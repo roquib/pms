@@ -18,7 +18,6 @@
                         <div class="row">
                             <div class="col-md-12 text-right">
 
-                                <button type="button" class="btn btn-default"><i class="fa fa-print"></i> Print</button>
                             </div>
 
 
@@ -26,14 +25,14 @@
                             <!--table-->
 
                             <div class="col-md-12">
-                                <table class="table table-striped">
+                                <table class="table table-striped text-center">
                                     <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
-                                            <th>Action</th>
+                                        <tr class="text-center">
+                                            <th class="text-center font-weight-bold text-Dark">Id</th>
+                                            <th class="text-center">Name</th>
+                                            <th class="text-center">Email</th>
+                                            <th class="text-center">Role</th>
+                                            <th class="text-center">Action</th>
 
                                         </tr>
                                         @php

@@ -55,6 +55,10 @@
                     <p>Admin</p>
                 </a></li>
 
+                <li><a href="{{route('all-admins')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
+                    <p>Admin</p>
+                </a></li>
+
 
           
             

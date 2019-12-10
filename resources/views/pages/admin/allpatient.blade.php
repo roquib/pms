@@ -10,15 +10,30 @@
             </ol>
         </div>
     </div>
-    <div class="input-group">
-        <input type="text" name="search" id="search" class="form-control search-input" placeholder="Search...">
-        <span class="input-group-btn">
-            <button class="btn btn-default close-search waves-effect waves-button waves-classic" type="button"><i
-                    class="fa fa-times"></i></button>
-        </span>
+    
+    <div class="input-group" style="
+    text-align: center; margin: auto;padding-top: 30px;">
+        <input type="text" name="search" id="search" class="form-control search-input search-design" placeholder="Search... "style="
+               
+                border-radius: 10px;
+                line-height: 112px;
+                height: 45px;
+                background-color: black;
+                margin: auto;
+                font-size: 16px;
+                font-style: italic;
+                text-align: center;
+                width: 142%;
+                
+            
+        " >
+       
     </div><!-- Input Group -->
-    <div id="result">
-        <ul id="list"></ul>
+    
+
+    <div id="result" class="text-center">
+        <ul id="list" style="list-style:none; font-size: 17px;
+        padding-top: 35px;"></ul>
     </div>
     <div id="main-wrapper">
         <div class="row">
@@ -28,7 +43,7 @@
                         <div class="row">
                             <div class="col-md-12 text-right">
 
-                                <button type="button" class="btn btn-default"><i class="fa fa-print"></i> Print</button>
+                                
                             </div>
 
 
@@ -39,10 +54,14 @@
                                 <table class="table table-striped text-center">
 
                                     <tr>
-                                        <th class="text-center">Id</th>
-                                        <th class="text-center">Name</th>
-                                        <th class="text-center">Age</th>
-                                        <th class="text-center">Action</th>
+                                        <th class="text-center" style="color: black;
+                                        font-size: 16px;">Id</th>
+                                        <th class="text-center" style="color: black;
+                                        font-size: 16px;">Name</th>
+                                        <th class="text-center" style="color: black;
+                                         font-size: 16px;">Age</th>
+                                        <th class="text-center" style="color: black;
+                                        nt-size: 16px;">Action</th>
 
                                     </tr>
                                     @foreach ($patients as $patient)
@@ -95,4 +114,20 @@
         <p class="no-s text-center">2019<i> &copy; MD MOMEN SHEKH</i></p>
     </div>
 </div>
+@endsection
+
+@section('css')
+<style>
+    .search-design {
+        /* width: 38px; */
+        border-radius: 10px;
+        line-height: 112px;
+        height: 55px;
+        background-color: black;
+        margin: auto;
+        /* text-align: center; */
+        font-size: 20px;
+        font-style: italic;
+    }
+</style>
 @endsection

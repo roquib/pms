@@ -127,8 +127,8 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i
-                                class="fa fa-search "></i></a>
+                        {{-- <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i
+                                class="fa fa-search "></i></a> --}}
                     </li>
 
 

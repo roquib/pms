@@ -96,15 +96,15 @@
                         <div class="d-inline-block login_button">
 
 
-                            {{-- <a class="btn text-sm-center" href="signin.html"><img
+                             <a class="btn text-sm-center" href="signin.html"><img
                                     src="{{asset('patient/img/login.png')}}" data-toggle="tooltip" title="Signin"
                             class="login_img" alt="" /></a>
 
 
                             <a class="" href="user_regstration.html"><img src="{{asset('patient/img/logout.png')}}"
                                     data-toggle="tooltip" class="signin_img" title="Signup" /></a>
-                            --}}
-                           {{-- <ul class="navbar-nav ml-auto">
+                            
+                           <ul class="navbar-nav ml-auto">
                                 <!-- Authentication Links -->
                                 @guest
                                 <li class="nav-item">
@@ -149,7 +149,6 @@
         </div>
     </nav>
 </div> --}}
-
 
 
 <!-- Navbar -->
@@ -503,3 +502,6 @@
     </nav>
 
 </div>
+
+
+
