@@ -123,23 +123,21 @@
                     <th>Not Paid</th>
                     <th>{{$test_total}}</th>
                     </tr> --}}
-                    @forelse ($payments as $payment)
+
                     <tr>
-                      <th>{{$payment->total}}</th>
-                      <th>{{$payment->pay}}</th>
-                      <th>{{$payment->due}}</th>
+                      <th>{{$total_payment}}</th>
+                      <th>{{$pay_payment}}</th>
+                      <th>{{$due_payment}}</th>
                     </tr>
-                    @empty
-                    <tr>
+                    {{-- <tr>
                       <th>{{$test_total}}</th>
-                      <th>Not Paid</th>
-                      <th>{{$test_total}}</th>
-                    </tr>
-                    @endforelse
+                    <th>Not Paid</th>
+                    <th>{{$test_total}}</th>
+                    </tr> --}}
                   </tbody>
                 </table>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6" style="{{($due_payment == 0) ? "display:none" : ''}}">
                 <h1>Payment Form</h1>
                 <form action="{{route('pay')}}" method="POST">
                   @csrf
@@ -155,6 +153,9 @@
                   </div>
                   <input type="submit" name="submit" class="btn btn-primary" value="Submit">
                 </form>
+              </div>
+              <div class="col-md-6" style="{{($due_payment == 0) ? "display:block" : 'display:none'}}">
+                <h1>Payment is done.</h1>
               </div>
             </div>
             <!--row-->

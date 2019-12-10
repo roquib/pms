@@ -43,7 +43,15 @@ class DashboardController extends Controller
         $tests = SaveTest::where('patient_id', $id)->where('prescription_id',)->get();
         $medicines = SaveMedicine::where('patient_id', $id)->get();
         $payment = Payment::where('patient_id', $id)->get();
-        return view('pages.admin.billPaymentConfirm', ['patient' => $patient, 'prescriptions' => $prescriptions, 'tests' => $tests, 'medicines' => $medicines, 'payments' => $payment]);
+        $total = 0;
+        $pays = 0;
+        // dd($payment);
+        foreach ($payment as $pay) {
+            $total = (int) $pay->total;
+            $pays += (int) $pay->pay;
+        }
+        $due = $total - $pays;
+        return view('pages.admin.billPaymentConfirm', ['patient' => $patient, 'prescriptions' => $prescriptions, 'tests' => $tests, 'medicines' => $medicines, 'total_payment' => $total, 'due_payment' => $due, 'pay_payment' => $pays]);
     }
     public function bill()
     {
