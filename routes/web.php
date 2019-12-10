@@ -1,10 +1,12 @@
 <?php
 
 
+Auth::routes();
 Route::get('/admin/login', ['as' => 'admin.login', 'uses' => 'LoginController@getLogin']);
 Route::post('/admin/login', ['as' => 'admin.login', 'uses' => 'LoginController@postLogin']);
 Route::post('/admin/logout', ['as' => 'admin.logout', 'uses' => 'LoginController@getLogout']);
-Route::group(['middleware' => ['authen', 'roles', 'auth']], function () {
+// Route::group(['middleware' => ['authen', 'roles']], function () { });
+Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin', 'testadmin', 'billadmin', 'doctoradmin', 'medicineadmin']], function () {
 	Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@dashboard']);
 	Route::get('/admin/profile', ['as' => 'profile', 'uses' => 'DashboardController@profile']);
 	Route::get('/admin/all', ['as' => 'all-admins', 'uses' => 'DashboardController@allAdmins']);
@@ -19,9 +21,9 @@ Route::group(['middleware' => ['authen', 'roles', 'auth']], function () {
 	Route::post('/prescription/store', ['as' => 'prescription.store', 'uses' => 'PrescriptionController@prescriptionStore']);
 	Route::get('/patients/{id}', ['middleware' => ['auth'], 'as' => 'showPatient', 'uses' => 'PageController@showPatient']);
 	Route::post('/delete/{id}', ['as' => 'delete', 'uses' => 'DashboardController@destroy']);
+	Route::post('/pay', ['as' => 'pay', 'uses' => 'PaymentController@store']);
 	Route::get('/search', ['as' => 'search', 'uses' => 'PageController@search']);
 });
-Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin']], function () { });
 Route::get('/noPermission', function () {
 	return view('permission.noPermission');
 })->name('noPermission');
@@ -32,8 +34,6 @@ Route::post('/patient/appointment/confirm', ['middleware' => ['auth'], 'as' => '
 Route::get('/patient/appointment/confirm', ['middleware' => ['auth'], 'as' => 'appointmentConfirmGet', 'uses' => 'PageController@appointmentConfirmGet']);
 
 Route::get('/contact', ['as' => 'contact', 'uses' => 'PageController@contact']);
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -53,4 +53,3 @@ Route::get('/Obstetrics', ['as' => 'Obstetrics', 'uses' => 'Category_Doctor_cont
 Route::get('/Ophthalmology', ['as' => 'Ophthalmology', 'uses' => 'Category_Doctor_controller@showOphthalmology'])->name('Ophthalmology');
 Route::get('/Rheumatology', ['as' => 'Rheumatology', 'uses' => 'Category_Doctor_controller@showRheumatology'])->name('Rheumatology');
 Route::get('/Urology', ['as' => 'Urology', 'uses' => 'Category_Doctor_controller@showUrology'])->name('Urology');
-

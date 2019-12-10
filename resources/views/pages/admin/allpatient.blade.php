@@ -61,7 +61,7 @@
                                         font-size: 16px;">Name</th>
                                         <th class="text-center" style="color: black;
                                          font-size: 16px;">Gender</th>
-                                         <th class="text-center" style="color: black;
+                                        <th class="text-center" style="color: black;
                                          font-size: 16px;">Doctor</th>
                                         <th class="text-center" style="color: black;
                                         nt-size: 16px;">Action</th>
@@ -153,7 +153,7 @@
                         var val = `<li>${value.name}</li>`;
                         patient.push(val);
                     }else {
-                        var val = `<li><a href="/patient/${value.id}">${value.id}</a></li>`;
+                        var val = `<li><a href="/patients/${value.id}">${value.name}</a></li>`;
                         patient.push(val);
                     }
                 });

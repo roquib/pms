@@ -11,7 +11,8 @@
         </div>
     </div>
     <div class="input-group">
-        <input type="text" name="search" id="search" class="form-control search-input" placeholder="Search...">
+        <input type="text" name="search" id="search" class="form-control search-input search-design"
+            placeholder="Search...">
         <span class="input-group-btn">
             <button class="btn btn-default close-search waves-effect waves-button waves-classic" type="button"><i
                     class="fa fa-times"></i></button>
@@ -71,4 +72,51 @@
         <p class="no-s text-center">2019<i> &copy; MD MOMEN SHEKH</i></p>
     </div>
 </div>
+@endsection
+@section('css')
+<style>
+    .search-design {
+        /* width: 38px; */
+        border-radius: 10px;
+        line-height: 112px;
+        height: 55px;
+        background-color: black;
+        margin: auto;
+        /* text-align: center; */
+        font-size: 20px;
+        font-style: italic;
+    }
+</style>
+@section('js')
+<script type="text/javascript">
+    $('#search').on('keyup',function(){
+            $value=$(this).val();
+            $.ajax({
+            type : 'get',
+            url : '{{URL::to('search')}}',
+            data:{'search':$value},
+            success:function(data){
+                // console.log(data);
+                // $('#search').autocomplete({
+                //     source: data
+                // });
+                var patient = [];
+                $.each(data, function(key,value){
+                    if(value.id ==null) {
+                        var val = `<li>${value.name}</li>`;
+                        patient.push(val);
+                    }else {
+                        var val = `<li><a href="/patient/${value.id}/payment/confirm">${value.name}</a></li>`;
+                        patient.push(val);
+                    }
+                });
+                // $( "#search" ).autocomplete({
+                // source: patient
+                // });
+                $('ul#list').html(patient);
+            }
+            });
+            })
+</script>
+
 @endsection

@@ -53,6 +53,8 @@
                     </tr>
                   </tbody>
                 </table>
+              </div>
+              <div class="col-md-6">
                 @php
                 $index = 1;
                 $test_total = 0;
@@ -105,10 +107,55 @@
                   Total: {{$test_total}}
                 </p>
               </div>
-
-
-
-
+              <div class="col-md-6">
+                <h1>Payment Table</h1>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Total</th>
+                      <th>Pay</th>
+                      <th>Due</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{-- <tr>
+                      <th>{{$test_total}}</th>
+                    <th>Not Paid</th>
+                    <th>{{$test_total}}</th>
+                    </tr> --}}
+                    @forelse ($payments as $payment)
+                    <tr>
+                      <th>{{$payment->total}}</th>
+                      <th>{{$payment->pay}}</th>
+                      <th>{{$payment->due}}</th>
+                    </tr>
+                    @empty
+                    <tr>
+                      <th>{{$test_total}}</th>
+                      <th>Not Paid</th>
+                      <th>{{$test_total}}</th>
+                    </tr>
+                    @endforelse
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-6">
+                <h1>Payment Form</h1>
+                <form action="{{route('pay')}}" method="POST">
+                  @csrf
+                  <div class="form-group">
+                    <label for="total">Total</label>
+                    <input type="text" class="form-control" value="{{$test_total}}" readonly name="total"
+                      placeholder="{{$test_total}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="total">Pay</label>
+                    <input type="text" class="form-control" name="pay" placeholder="Pay">
+                    <input type="hidden" name="patient_id" value="{{$patient->id}}">
+                  </div>
+                  <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+                </form>
+              </div>
             </div>
             <!--row-->
           </div>

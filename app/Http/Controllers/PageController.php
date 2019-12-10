@@ -34,7 +34,8 @@ class PageController extends Controller
             if (empty($request->search)) {
                 return [["name" => "no data found", "id" => null]];
             } else {
-                $products = DB::table('patients')->where('name', 'LIKE', '%' . $request->search . "%")->get();
+                // $products = DB::table('patients')->where('name', 'LIKE', '%' . $request->search . "%")->get();
+                $products = DB::table('patients')->where('id', $request->search)->get();
                 // if ($products) {
                 //     foreach ($products as $key => $product) {
                 //         $output .= '<li>' .

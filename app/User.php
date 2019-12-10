@@ -18,9 +18,26 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password', 'role_id', 'username', 'active', 'phone'
     ];
-    public function hasRole($role)
+    // public function hasRole($role)
+    // {
+    //     return $this->role == $role;
+    // }
+    private function checkIfUserHasRole($need_role)
     {
-        return $this->role == $role;
+        return (strtolower($need_role) == strtolower($this->role->name)) ? true : null;
+    }
+    public function hasRole($roles)
+    {
+        if (is_array($roles)) {
+            foreach ($roles as $need_role) {
+                if ($this->checkIfUserHasRole($need_role)) {
+                    return true;
+                }
+            }
+        } else {
+            return $this->checkIfUserHasRole($roles);
+        }
+        return false;
     }
     public function isAdmin($role)
     {
