@@ -23,7 +23,7 @@ class PageController extends Controller
     {
         $patient = Patient::findOrFail($id);
         $prescriptions = Prescription::where('patient_id', $id)->take(3)->get();
-        $tests = SaveTest::where('patient_id', $id)->where('prescription_id',)->get();
+        $tests = SaveTest::where('patient_id', $id)->where('prescription_id')->get();
         $medicines = SaveMedicine::where('patient_id', $id)->get();
         return view('pages.admin.show', ['patient' => $patient, 'prescriptions' => $prescriptions, 'tests' => $tests, 'medicines' => $medicines]);
     }
