@@ -3,7 +3,7 @@
 <div class="doctor_all_profile">
 
     <div class="container3">
-        <h1 class="display-4 text-center">
+        <h1 class="display-5 text-center mt-5 " style="background: cadetblue;margin: auto;width: 60%;line-height: 60px;border-radius: 12px;">
             List of Doctors Available Now
         </h1>
 
@@ -11,7 +11,7 @@
 
             <div class="col-sm-4">
 
-                <a href="doctor/doctor_psychology.html"></a>
+                <a href="doctor/doctor_psychology.html">
                 <img class="img_profile" src="{{asset('patient/img/ddd.jpg')}}" alt="" />
 
                 <div class="dor_cont">
@@ -21,10 +21,9 @@
                     <b>Degree:</b>
                     (MBBS, BMBS, MBphB, MCPH)
 
-
                 </div>
 
-
+            </a>
 
             </div>
 
@@ -90,7 +89,7 @@
 
                     <div class="dor_cont">
 
-                        <b>Name:</b> Prof.Dr.Sormila <br />
+                        <b>Name:</b> Prof.Dr.Sormi <br />
                         <b>Specialist:</b> Endocrinology & Diabetology <br />
                         <b>Degree:</b>
                         (MBBS, BMBS, D.O)

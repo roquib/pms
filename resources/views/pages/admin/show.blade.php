@@ -26,22 +26,34 @@
 							<!--table-->
 
 							<div class="col-md-12">
-								<h1>About Patient</h1>
+								<h1 class="text-center" style="color: azure;opacity: 1;background-color: cadetblue;line-height: 52px;border-radius: 4px;margin-bottom: 45px;">About Patient</h1>
+								
 								<table class="table">
 									<thead>
+										
 										<tr>
-											<th>Id</th>
-											<th>Name</th>
-											<th>Phone</th>
-											<th>Gender</th>
-											<th>Address</th>
-											<th>Date</th>
-											<th>Department</th>
-											<th>doctor</th>
-										</tr>
+											<th  style="color: black;
+											font-size: 16px;">ID</th>
+											<th  style="color: black;
+											font-size: 16px;">Name</th>
+											<th  style="color: black;
+											 font-size: 16px;">phone</th>
+											<th style="color: black;
+											font-size: 16px;">Gender</th>
+											<th style="color: black;
+											font-size: 16px;">Address</th>
+											<th style="color: black;
+											font-size: 16px;">Date</th>
+											<th style="color: black;
+											font-size: 16px;">Department</th>
+											<th style="color: black;
+											font-size: 16px;">Doctor</th>
+											
+			
+										 </tr>
 									</thead>
 									<tbody>
-										<tr>
+										<tr style="font-size: 15px;text-transform: capitalize;">
 											<td>{{ $patient->id }}</td>
 											<td>{{ $patient->name }}</td>
 											<td>{{ $patient->phone }}</td>
@@ -57,10 +69,11 @@
 								$index = 1;
 								@endphp
 								@foreach ($prescriptions as $prescription)
-								<h1>Prescription Table {{$index++}}</h1>
+								<h1 class="text-center"style="color: azure;opacity: 1;background-color: cadetblue;line-height: 52px;border-radius: 4px;margin-bottom: 45px;margin-top:115px;">Prescription Table {{$index++}}</h1>
 								<table class="table">
 									<thead>
-										<tr>
+										<tr style="color: black;
+										font-size: 16px;">
 											<th>Disease</th>
 											<th>Test</th>
 											<th>Medicine</th>
@@ -69,7 +82,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
+										<tr style="font-size: 15px;text-transform: capitalize;">
 											<td>{{ $prescription->disease }}</td>
 											<td>
 												<ul>
@@ -107,8 +120,8 @@
 			</div>
 		</div><!-- Row -->
 	</div><!-- Main Wrapper -->
-	<div class="page-footer">
-		<p class="no-s text-center">2019<i> &copy; MD MOMEN SHEKH</i></p>
+	<div class="page-footer" style="background-color: cadetblue;">
+		<p class="no-s text-center" style="font-size: 15px;">2019<i> &copy; MD MOMEN SHEKH</i></p>
 	</div>
 </div>
 @endsection

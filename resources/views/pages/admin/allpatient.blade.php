@@ -59,7 +59,9 @@
                                         <th class="text-center" style="color: black;
                                         font-size: 16px;">Name</th>
                                         <th class="text-center" style="color: black;
-                                         font-size: 16px;">Age</th>
+                                         font-size: 16px;">Gender</th>
+                                         <th class="text-center" style="color: black;
+                                         font-size: 16px;">Doctor</th>
                                         <th class="text-center" style="color: black;
                                         nt-size: 16px;">Action</th>
 
@@ -69,6 +71,7 @@
                                         <td>{{$patient->id}}</td>
                                         <td>{{$patient->name}}</td>
                                         <td>{{$patient->gender}}</td>
+                                        <td>{{$patient->doctor}}</td>
                                         <td>
                                             <a href="{{route('showPatient',$patient->id)}}"
                                                 class="btn btn-primary">View</a>
@@ -76,18 +79,18 @@
                                                 <button class="btn btn-primary dropdown-toggle" type="button"
                                                     data-toggle="dropdown">Prescription
                                                     <span class="caret"></span></button>
-                                                <ul class="dropdown-menu"
-                                                    style="background-color:#6A5FAC; color: black;">
-                                                    <li><a style="color: black;"
+                                                <ul class="dropdown-menu text-center"
+                                                    style="background-color:#6A5FAC; color: black;text-align:center;">
+                                                    <li><a style="color: black;font-size: 15px;"
                                                             class="{{($id ?? '' == null) ? "disabled" : ''}}"
                                                             href="{{route('prescription.doc',['id'=>1,'patientid' => $patient->id])}}">Prescription
                                                             1</a>
                                                     </li>
-                                                    <li><a style=" color: black;"
+                                                    <li><a style="color: black;font-size: 15px;"
                                                             href="{{route('prescription.doc',['id'=>2,'patientid' => $patient->id])}}">Prescription
                                                             2</a>
                                                     </li>
-                                                    <li><a style="color: black;"
+                                                    <li><a style="color: black;font-size: 15px;"
                                                             href="{{route('prescription.doc',['id'=>3,'patientid' => $patient->id])}}">Prescription
                                                             3</a>
                                                     </li>
@@ -115,7 +118,6 @@
     </div>
 </div>
 @endsection
-<<<<<<< HEAD
 
 @section('css')
 <style>
@@ -131,7 +133,6 @@
         font-style: italic;
     }
 </style>
-=======
 @section('js')
 <script type="text/javascript">
     $('#search').on('keyup',function(){
@@ -164,5 +165,4 @@
             })
 </script>
 
->>>>>>> 81e8c38b6c89e50f9f860713b57f9bbbffc399c8
 @endsection

@@ -32,11 +32,13 @@ class DashboardController extends Controller
     {
         return view('pages.admin.billPayment');
     }
+
     public function bill()
     {
         $prescription = Prescription::latest()->get();
         return view('pages.admin.bill', ['prescription' => $prescription]);
     }
+
     public function allPatient()
     {
         $id = Auth::id();
@@ -44,6 +46,7 @@ class DashboardController extends Controller
         // dd($patients,$id);
         return view('pages.admin.allpatient', ['patients' => $patients]);
     }
+
     public function allAdmins()
     {
         return view('pages.admin.all-admins', ['users' => User::all()]);

@@ -34,3 +34,22 @@ Route::get('/contact', ['as' => 'contact', 'uses' => 'PageController@contact']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+//Category Doctor route
+
+Route::get('/Cardiology', ['as' => 'Cardiology', 'uses' => 'Category_Doctor_controller@showCardiology'])->name('Cardiology');
+
+Route::get('/Dental', ['as' => 'Dental', 'uses' => 'Category_Doctor_controller@showDental'])->name('Dental');
+Route::get('/Endocrinology', ['as' => 'Endocrinology', 'uses' => 'Category_Doctor_controller@showEndocrinology'])->name('Endocrinology');
+Route::get('/Neurology', ['as' => 'Neurology', 'uses' => 'Category_Doctor_controller@showNeurology'])->name('Neurology');
+Route::get('/Nephrology', ['as' => 'Nephrology', 'uses' => 'Category_Doctor_controller@showNephrology'])->name('Nephrology');
+Route::get('/Psychology', ['as' => 'Psychology', 'uses' => 'Category_Doctor_controller@showPsychology'])->name('Psychology');
+Route::get('/Obstetrics', ['as' => 'Obstetrics', 'uses' => 'Category_Doctor_controller@showObstetrics'])->name('Obstetrics');
+Route::get('/Ophthalmology', ['as' => 'Ophthalmology', 'uses' => 'Category_Doctor_controller@showOphthalmology'])->name('Ophthalmology');
+Route::get('/Rheumatology', ['as' => 'Rheumatology', 'uses' => 'Category_Doctor_controller@showRheumatology'])->name('Rheumatology');
+Route::get('/Urology', ['as' => 'Urology', 'uses' => 'Category_Doctor_controller@showUrology'])->name('Urology');
+

@@ -68,14 +68,48 @@
 
             <!--page admin elements-->
             @can('isAdmin')
-            <li><a href="{{route('all-admins')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
+             <li>
+                 <a href="{{route('all-admins')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
                     <p>Admin</p>
-                </a></li>
+                </a>
+            </li>
 
-                <li><a href="{{route('all-admins')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
-                    <p>Admin</p>
-                </a></li>
 
+
+                <li>
+                    <a href="#"><span class="menu-icon glyphicon glyphicon-edit"></span>
+                    <p>Forms</p>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <a href="#"><span class="menu-icon glyphicon glyphicon-th"></span>
+                    <p>Room</p>
+                    </a>
+                </li>
+
+
+
+
+                <li>
+                    <a href="#"><span class="menu-icon glyphicon glyphicon-flash"></span>
+                    <p>Test</p>
+                    </a>
+                </li>
+
+
+
+
+
+                <li >   
+                    <a href="#" class="waves-effect waves-button"><span
+                    class="menu-icon glyphicon glyphicon-gift"></span>
+                    <p>Medicine</p></span>
+                    </a>
+            
+                </li>
 
 
 
@@ -98,18 +132,7 @@
 
             <!--extra manu-->
 
-            <li class="droplink"><a href="#" class="waves-effect waves-button"><span
-                        class="menu-icon glyphicon glyphicon-gift"></span>
-                    <p>Extra</p><span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-
-
-                    <li><a href="calendar.html">Calendar</a></li>
-
-
-                </ul>
-            </li>
+            
             @endcan
         </ul>
 

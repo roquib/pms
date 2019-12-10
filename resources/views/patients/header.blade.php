@@ -399,19 +399,48 @@
                         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
 
 
-                            <a class="dropdown-item a_hover" href="doctor/doctor_cardiology.html">Cardiology</a>
-                            <a class="dropdown-item a_hover" href="doctor/doctor_dental.html">Dental & Maxillofacial
-                                Surgery </a>
-                            <a class="dropdown-item a_hover" href="doctor/doctor_endocrilogy.html">Endocrinology &
-                                Diabetology</a>
-                            <a class="dropdown-item a_hover" href="doctor/doctor_Neurology.html">Neurology</a>
-                            <a class="dropdown-item a_hover" href="doctor/doctor_Nephrology.html">Nephrology</a>
-                            <a class="dropdown-item a_hover" href="doctor/doctor_psychology.html">psychology</a>
+                        <a class="dropdown-item a_hover" href="{{ URL::to('/Cardiology')}} ">
+                                Cardiology
+                            </a>
+
+                            <a class="dropdown-item a_hover" href="{{ URL::to('/Dental')}}">
+                                Dental & Maxillofacial
+                                Surgery 
+                            </a>
+
+                            <a class="dropdown-item a_hover" href="{{ URL::to('/Endocrinology')}}">
+                                Endocrinology &
+                                Diabetology
+                            </a>
+
+                            <a class="dropdown-item a_hover" href="{{ URL::to('/Neurology')}}">
+                                Neurology
+                            </a>
+                            
+                            <a class="dropdown-item a_hover" href="{{ URL::to('/Nephrology')}}">
+                                Nephrology
+                            </a>
+                            
+                            <a class="dropdown-item a_hover" href="{{ URL::to('/Psychology')}}">
+                                Psychology
+                            </a>
+
                             <a class="dropdown-item a_hover"
-                                href="doctor/doctor_obstetrics & Gynaecology.html">Obstetrics & Gynaecology</a>
-                            <a class="dropdown-item a_hover" href="doctor/doctor_ophthalmology.html">Ophthalmology</a>
-                            <a class="dropdown-item a_hover" href="doctor/doctor_rheumatology.html">Rheumatology</a>
-                            <a class="dropdown-item a_hover" href="doctor/doctor_Urology.html">Urology</a>
+                                href="{{ URL::to('/Obstetrics')}}">
+                                Obstetrics & Gynaecology
+                            </a>
+
+                            <a class="dropdown-item a_hover" href="{{ URL::to('/Ophthalmology')}}">
+                                Ophthalmology
+                            </a>
+
+                            <a class="dropdown-item a_hover" href="{{ URL::to('/Rheumatology')}}">
+                                Rheumatology
+                            </a>
+
+                            <a class="dropdown-item a_hover" href="{{ URL::to('/Urology')}}">
+                                Urology
+                            </a>
 
 
 
