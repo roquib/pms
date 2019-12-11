@@ -50,9 +50,10 @@
             @include('layouts.inc.navbar')
 
             @include('layouts.inc.sidebar')
-
+            <div class="page-inner">
+                @yield('content')
+            </div>
             {{-- @include('layouts.inc.page-inner') --}}
-            @yield('content')
         </main><!-- Page Content -->
     </div>
     <div class="cd-overlay"></div>

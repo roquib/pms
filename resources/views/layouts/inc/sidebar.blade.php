@@ -62,54 +62,57 @@
                 <a href="{{route('allPatient')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
                     <p>Patients</p>
                 </a>
+                @elsecan('isMedicineAdmin')
+                <a href="{{route('patient.get')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
+                    <p>Patients</p>
+                </a>
                 @endcan
             </li>
 
 
             <!--page admin elements-->
             @can('isAdmin')
-             <li>
-                 <a href="{{route('all-admins')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
+            <li>
+                <a href="{{route('all-admins')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
                     <p>Admin</p>
                 </a>
             </li>
 
 
 
-                <li>
-                    <a href="#"><span class="menu-icon glyphicon glyphicon-edit"></span>
+            <li>
+                <a href="#"><span class="menu-icon glyphicon glyphicon-edit"></span>
                     <p>Forms</p>
-                    </a>
-                </li>
+                </a>
+            </li>
 
 
 
-                <li>
-                    <a href="#"><span class="menu-icon glyphicon glyphicon-th"></span>
+            <li>
+                <a href="#"><span class="menu-icon glyphicon glyphicon-th"></span>
                     <p>Room</p>
-                    </a>
-                </li>
+                </a>
+            </li>
 
 
 
 
-                <li>
-                    <a href="#"><span class="menu-icon glyphicon glyphicon-flash"></span>
+            <li>
+                <a href="#"><span class="menu-icon glyphicon glyphicon-flash"></span>
                     <p>Test</p>
-                    </a>
-                </li>
+                </a>
+            </li>
 
 
 
 
 
-                <li >   
-                    <a href="#" class="waves-effect waves-button"><span
-                    class="menu-icon glyphicon glyphicon-gift"></span>
+            <li>
+                <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-gift"></span>
                     <p>Medicine</p></span>
-                    </a>
-            
-                </li>
+                </a>
+
+            </li>
 
 
 
@@ -132,7 +135,7 @@
 
             <!--extra manu-->
 
-            
+
             @endcan
         </ul>
 

@@ -22,6 +22,8 @@ Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin', 'testadm
 	Route::get('/patients/{id}', ['middleware' => ['auth'], 'as' => 'showPatient', 'uses' => 'PageController@showPatient']);
 	Route::post('/delete/{id}', ['as' => 'delete', 'uses' => 'DashboardController@destroy']);
 	Route::post('/pay', ['as' => 'pay', 'uses' => 'PaymentController@store']);
+	Route::post('/medicine/patient', ['as' => 'patient.post', 'uses' => 'PharmecyController@store']);
+	Route::get('/medicine/patient', ['as' => 'patient.get', 'uses' => 'PharmecyController@fetch']);
 	Route::get('/search', ['as' => 'search', 'uses' => 'PageController@search']);
 });
 Route::get('/noPermission', function () {
