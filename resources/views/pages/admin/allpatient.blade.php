@@ -112,9 +112,9 @@
         </div>
     </div><!-- Row -->
 </div><!-- Main Wrapper -->
-<div class="page-footer">
-    <p class="no-s text-center">2019<i> &copy; MD MOMEN SHEKH</i></p>
-</div>
+<div class="page-footer" style="background-color: cadetblue;">
+        <p class="no-s text-center" style="font-size: 15px;">2019<i> &copy; MD MOMEN SHEKH</i></p>
+    </div>
 @endsection
 
 @section('css')

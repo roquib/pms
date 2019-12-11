@@ -80,16 +80,20 @@
 
 
 
-            <li>
-                <a href="#"><span class="menu-icon glyphicon glyphicon-edit"></span>
-                    <p>Forms</p>
-                </a>
+            <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-log-in"></span><p>Registration </p><span class="arrow"></span></a>
+                <ul class="sub-menu">
+                    <li><a href="{{URL::to('admin/login/form')}}">Registration Form Doctor</a></li>
+                    <li><a href="forgot.html">Register Form Bill</a></li>
+                    <li><a href="forgot.html">Register Form Medicine</a></li>
+                    <li><a href="forgot.html">Register Form Test</a></li>
+                   
+                </ul>
             </li>
 
 
 
             <li>
-                <a href="#"><span class="menu-icon glyphicon glyphicon-th"></span>
+                <a href="{{URL::to('/admin/allroom')}}"><span class="menu-icon glyphicon glyphicon-th"></span>
                     <p>Room</p>
                 </a>
             </li>
@@ -98,7 +102,7 @@
 
 
             <li>
-                <a href="#"><span class="menu-icon glyphicon glyphicon-flash"></span>
+            <a href="{{URL::to('/admin/alltest')}}"><span class="menu-icon glyphicon glyphicon-flash"></span>
                     <p>Test</p>
                 </a>
             </li>
@@ -108,7 +112,7 @@
 
 
             <li>
-                <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-gift"></span>
+                <a href="{{URL::to('/admin/allmedicine')}}" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-gift"></span>
                     <p>Medicine</p></span>
                 </a>
 
@@ -120,7 +124,7 @@
 
             <!--google map-->
 
-            <li class="droplink"><a href="#" class="waves-effect waves-button"><span
+            {{-- <li class="droplink"><a href="#" class="waves-effect waves-button"><span
                         class="menu-icon glyphicon glyphicon-map-marker"></span>
                     <p>Maps</p><span class="arrow"></span>
                 </a>
@@ -128,7 +132,7 @@
                     <li><a href="maps-google.html">Google Maps</a></li>
 
                 </ul>
-            </li>
+            </li> --}}
 
 
 
