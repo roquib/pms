@@ -9,8 +9,9 @@
     <title>Demo</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 
@@ -19,7 +20,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script> --}}
 
     <link rel="stylesheet" href="{{asset('patient/style.css')}}" type="text/css" />
 
@@ -49,7 +50,7 @@
     @include('patients.footer')
     @endif
     @endif
-    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     @yield('js')
     <div class="page-footer">
         <p class="no-s text-center">2015 &copy; Hospital Name</p>
