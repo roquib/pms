@@ -57,6 +57,27 @@ Route::get('/Ophthalmology', ['as' => 'Ophthalmology', 'uses' => 'Category_Docto
 Route::get('/Rheumatology', ['as' => 'Rheumatology', 'uses' => 'Category_Doctor_controller@showRheumatology'])->name('Rheumatology');
 Route::get('/Urology', ['as' => 'Urology', 'uses' => 'Category_Doctor_controller@showUrology'])->name('Urology');
 
+<<<<<<< HEAD
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+=======
+
+
+//admin login route
+
+Route::get('/admin/login/form', ['as' => 'admin/login/form', 'uses' => 'all_admin_login_Controller@login'])->name('login');
+
+
+//test route
+
+Route::get('/admin/alltest', ['as' => 'alltest', 'uses' => 'all_admin_login_Controller@alltest'])->name('alltest');
+
+//room route
+
+Route::get('/admin/allroom' , ['as' => 'allroom', 'uses' => 'all_admin_login_Controller@allroom'])->name('allroom');
+
+//Medicine route
+
+Route::get('/admin/allmedicine' , ['as' => 'allmedicine', 'uses' => 'all_admin_login_Controller@allmedicine'])->name('allmedicine');
+>>>>>>> 8e7010f2ac111e124d0d92ded6704cc122365a46

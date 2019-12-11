@@ -9,13 +9,24 @@
         </ol>
     </div>
 </div>
-<div class="input-group">
+<div class="input-group" style="
+    text-align: center; margin: auto;padding-top: 30px;">
     <input type="text" name="search" id="search" class="form-control search-input search-design"
-        placeholder="Search...">
-    <span class="input-group-btn">
-        <button class="btn btn-default close-search waves-effect waves-button waves-classic" type="button"><i
-                class="fa fa-times"></i></button>
-    </span>
+        placeholder="Search... " style="
+               
+                border-radius: 10px;
+                line-height: 112px;
+                height: 45px;
+                background-color: black;
+                margin: auto;
+                font-size: 16px;
+                font-style: italic;
+                text-align: center;
+                width: 142%;
+                
+            
+        ">
+
 </div><!-- Input Group -->
 <div id="result">
     <ul id="list"></ul>
@@ -38,7 +49,8 @@
                         <div class="col-md-12">
                             <table class="table table-striped text-center">
 
-                                <tr>
+                                <tr  style="color: black;
+                                font-size: 16px;">
                                     <th class="text-center">Patient Id</th>
                                     <th class="text-center">Patient Name</th>
                                     <th class="text-center">Doctor Name</th>
@@ -47,12 +59,12 @@
                                 </tr>
                                 @foreach ($prescription as $pres)
                                 @foreach ($pres->patients($pres->patient_id) as $patient)
-                                <tr>
+                                <tr style="font-size: 15px;text-transform: capitalize;">
                                     <td>{{$patient->id}}</td>
                                     <td>{{$patient->name}}</td>
                                     <td>{{$pres->daktar($patient->doctor)->name}}</td>
                                     <td>
-                                        <a href="{{route('bill.payment.confirm',['id' => $patient->id])}}">View</a>
+                                        <a class="btn btn-primary" href="{{route('bill.payment.confirm',['id' => $patient->id])}}">View</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -67,8 +79,8 @@
         </div>
     </div><!-- Row -->
 </div><!-- Main Wrapper -->
-<div class="page-footer">
-    <p class="no-s text-center">2019<i> &copy; MD MOMEN SHEKH</i></p>
+<div class="page-footer" style="background-color: cadetblue;">
+	<p class="no-s text-center" style="font-size: 15px;">2019<i> &copy; MD MOMEN SHEKH</i></p>
 </div>
 @endsection
 @section('css')

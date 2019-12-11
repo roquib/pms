@@ -40,7 +40,7 @@ class DashboardController extends Controller
     {
         $patient = Patient::findOrFail($id);
         $prescriptions = Prescription::where('patient_id', $id)->take(3)->get();
-        $tests = SaveTest::where('patient_id', $id)->where('prescription_id',)->get();
+        $tests = SaveTest::where('patient_id', $id)->where('prescription_id')->get();
         $medicines = SaveMedicine::where('patient_id', $id)->get();
         $payment = Payment::where('patient_id', $id)->get();
         $total = 0;
