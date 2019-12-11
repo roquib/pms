@@ -30,14 +30,16 @@ Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin', 'testadm
 Route::get('/noPermission', function () {
 	return view('permission.noPermission');
 })->name('noPermission');
-// Route::get('/', ['as' => '/', 'uses' => 'PageController@home']);
+// Route::get('/', ['as' => '/', 'uses' => 'HomeController@index']);
 Route::get('/doctor', ['as' => 'doctor', 'uses' => 'PageController@doctor']);
+Route::get('/', ['as' => '/', 'uses' => 'PageController@home']);
 Route::get('/appointment', ['middleware' => ['auth'], 'as' => 'appointment', 'uses' => 'PageController@appointment']);
 Route::post('/patient/appointment/confirm', ['middleware' => ['auth'], 'as' => 'appointmentConfirm', 'uses' => 'PageController@appointmentConfirm']);
 Route::get('/patient/appointment/confirm', ['middleware' => ['auth'], 'as' => 'appointmentConfirmGet', 'uses' => 'PageController@appointmentConfirmGet']);
 
 Route::get('/contact', ['as' => 'contact', 'uses' => 'PageController@contact']);
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile/user', 'HomeController@profile')->name('profile.user');
 
 
 
@@ -57,11 +59,9 @@ Route::get('/Ophthalmology', ['as' => 'Ophthalmology', 'uses' => 'Category_Docto
 Route::get('/Rheumatology', ['as' => 'Rheumatology', 'uses' => 'Category_Doctor_controller@showRheumatology'])->name('Rheumatology');
 Route::get('/Urology', ['as' => 'Urology', 'uses' => 'Category_Doctor_controller@showUrology'])->name('Urology');
 
-<<<<<<< HEAD
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-=======
+// Route::get('/', 'HomeController@index')->name('home');
 
 
 //admin login route
@@ -75,9 +75,8 @@ Route::get('/admin/alltest', ['as' => 'alltest', 'uses' => 'all_admin_login_Cont
 
 //room route
 
-Route::get('/admin/allroom' , ['as' => 'allroom', 'uses' => 'all_admin_login_Controller@allroom'])->name('allroom');
+Route::get('/admin/allroom', ['as' => 'allroom', 'uses' => 'all_admin_login_Controller@allroom'])->name('allroom');
 
 //Medicine route
 
-Route::get('/admin/allmedicine' , ['as' => 'allmedicine', 'uses' => 'all_admin_login_Controller@allmedicine'])->name('allmedicine');
->>>>>>> 8e7010f2ac111e124d0d92ded6704cc122365a46
+Route::get('/admin/allmedicine', ['as' => 'allmedicine', 'uses' => 'all_admin_login_Controller@allmedicine'])->name('allmedicine');

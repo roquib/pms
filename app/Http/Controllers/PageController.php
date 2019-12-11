@@ -76,7 +76,7 @@ class PageController extends Controller
     {
         $departments = Department::where('role_id', 5)->get();
         // dd($departments);
-        return view('patients.appointment', ['departments' => $departments]);
+        return view('home', ['departments' => $departments]);
     }
 
     public function doctor()
