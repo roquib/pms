@@ -230,8 +230,7 @@
                     {{-- <li role="presentation"><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox<span
                                         class="badge badge-success pull-right">4</span></a></li> --}}
                     <li role="presentation" class="divider"></li>
-                    <li role="presentation">
-                        @guest
+                    @guest
                     <li role="presentation">
                         <a href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
@@ -253,8 +252,7 @@
                         </form>
                     </li>
                     @endguest
-            </li>
-            </ul>
+                </ul>
             </li>
             <li>
                 <a href="{{ route('logout') }}"

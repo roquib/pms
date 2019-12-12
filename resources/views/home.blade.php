@@ -476,18 +476,18 @@
 @endsection
 @section('js')
 <script>
-    function valueCheck(val) {
-        var myList = $('#doctor option').map(function() {
-        return {id: this.value,value: this.text}
-        }).get();
-        console.log(myList);
-        $.each(myList,function(i,ll){
-            return ll.id === val.id
-        });
-        return false;
+    function chooseDoctor(obj) {
+        var value = $('#doctor').val();
+        if(value) {
+            // console.log()
+            alert('doctor is inserted'+value);
+        }else {
+            alert('please choose department first' + value);
+        }
     }
     $('#department').on('click',function() {
         var value = $(this).val();
+        // console.log(value);
         $.post(`{{route('findDoctorWithDept')}}`,{department: value},function(data){
             // $('#doctor').append($('<option/>',{
             //     value: data.name,
@@ -495,20 +495,18 @@
             // }));
             // console.log(data);
             $.each(data,function(i,value){
-                if(valueCheck(value) == false) {
-                    $('#doctor').append($('<option />',{
+                $('#doctor').append($('<option/>',{
                     value: value.user_id,
                     text: value.user.name
-                    }));
-                }
+                }));
                 // console.log(value.user);
             });
         });
     });
-    // $('#frm-create-appointment').on('submit',function(e){
-    //     e.preventDefault();
-    //     var data = $(this).serializeArray();
-    //     console.log(data);
-    // });
+    $('#frm-create-appointment').on('submit',function(e){
+        e.preventDefault();
+        var data = $(this).serializeArray();
+        console.log(data);
+    });
 </script>
 @endsection
