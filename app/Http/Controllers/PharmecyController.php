@@ -18,6 +18,7 @@ class PharmecyController extends Controller
     }
     public function view($id)
     {
-        return view('pages.admin.medicine-info');
+        $save_medicines = SaveMedicine::where('patient_id', $id)->distinct()->get(['name']);
+        return view('pages.admin.medicine-info', ['save_medicines' => $save_medicines]);
     }
 }

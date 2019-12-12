@@ -14,8 +14,17 @@
         padding-top: 35px;"></ul>
 </div>
 <div id="main-wrapper">
-  <div class="display-4">
-    List of medicine for patient to be check here... working on progress
+  @foreach ($save_medicines as $sm)
+  <div class="container">
+    <p>
+      <label for="{{$sm->name}}">
+        <input type="checkbox" id="{{$sm->name}}" class="btn btn-primary">{{$sm->name}}
+      </label>
+    </p>
+  </div>
+  @endforeach
+  <div class="container">
+    <input type="submit" value="Submit" class="btn btn-primary">
   </div>
 </div><!-- Main Wrapper -->
 <div class="page-footer">
