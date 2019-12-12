@@ -1,11 +1,16 @@
 @extends('layouts.admin')
 @section('content')
 
-<div class="container">  
+<div class="container" style="width: 1055px;">  
           
 
           <div class="row ">
                <div class="col-sm-12 mt-5 " style="margin-top: 100px;">
+
+                         <div class="text-right">
+
+                                   <a href="#" class="btn btn-primary " style="margin-right: 80px;margin-bottom: 16px;"> Add </a>
+                              </div>
                          <table class="table table-striped text-center">
 
                                    <tr  style="color: black;

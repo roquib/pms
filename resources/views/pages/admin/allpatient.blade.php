@@ -74,6 +74,8 @@
                                     <td>{{$patient->doctor}}</td>
                                     <td>
                                         <a href="{{route('showPatient',$patient->id)}}" class="btn btn-primary">View</a>
+
+                                        
                                         <div class="dropdown btn-group">
                                             <button class="btn btn-primary dropdown-toggle" type="button"
                                                 data-toggle="dropdown">Prescription
