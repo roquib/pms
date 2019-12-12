@@ -3,7 +3,7 @@
 <div class="doctor_all_profile">
 
     <div class="container3">
-        <h1 class="display-5 text-center mt-5 " style="background: cadetblue;margin: auto;width: 60%;line-height: 60px;border-radius: 12px;">
+        <h1 class="display-5 text-center mt-5 " style="background: cadetblue;margin: auto;width: 60%;line-height: 60px;border-radius: 12px;font-family: Georgia, serif;">
             List of Doctors Available Now
         </h1>
 

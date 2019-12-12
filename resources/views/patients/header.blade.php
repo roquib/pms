@@ -212,6 +212,8 @@
 
             <div class="collapse navbar-collapse text-center  " id="navbarSupportedContent">
 
+                <div  style="margin-left: auto !important;">
+
                 <ul class="navbar-nav ml-auto  ">
 
                     <li class="nav-item active ">
@@ -308,7 +310,9 @@
 
                 </ul>
 
-                <input class="form-control search-form-control " type="search" placeholder="Search" aria-label="Search">
+            </div>
+
+                <input class="form-control search-form-control " type="search" placeholder="Search" style="width: 12%;" aria-label="Search">
 
                 <button class="btn btn-success text-sm-center" type="submit">Search</button>
                 <ul class="navbar-nav ml-auto">
