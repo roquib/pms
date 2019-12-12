@@ -66,36 +66,26 @@
                                         nt-size: 16px;">Action</th>
 
                 </tr>
-                {{-- @foreach ($patients as $patient)
+                @foreach ($patients as $patient)
                 <tr>
-                  <td>{{$patient->id}}</td>
-                <td>{{$patient->name}}</td>
-                <td>{{$patient->gender}}</td>
-                <td>{{$patient->doctor}}</td>
-                <td>
-                  <a href="{{route('showPatient',$patient->id)}}" class="btn btn-primary">View</a>
-                  <div class="dropdown btn-group">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Prescription
-                      <span class="caret"></span></button>
-                    <ul class="dropdown-menu text-center"
-                      style="background-color:#6A5FAC; color: black;text-align:center;">
-                      <li><a style="color: black;font-size: 15px;" class="{{($id ?? '' == null) ? "disabled" : ''}}"
-                          href="{{route('prescription.doc',['id'=>1,'patientid' => $patient->id])}}">Prescription
-                          1</a>
-                      </li>
-                      <li><a style="color: black;font-size: 15px;"
-                          href="{{route('prescription.doc',['id'=>2,'patientid' => $patient->id])}}">Prescription
-                          2</a>
-                      </li>
-                      <li><a style="color: black;font-size: 15px;"
-                          href="{{route('prescription.doc',['id'=>3,'patientid' => $patient->id])}}">Prescription
-                          3</a>
-                      </li>
-                    </ul>
-                  </div>
-                </td>
+                  <td>
+                    {{$patient->patient->id}}
+                  </td>
+                  <td>
+                    {{$patient->patient->name}}
+                  </td>
+                  <td>
+                    {{$patient->patient->gender}}
+                  </td>
+                  <td>
+                    {{$patient->doctor($patient->patient->doctor)}}
+                  </td>
+                  <td>
+                    <a href="{{route('patient.get.view',['id' => $patient->patient->id])}}"
+                      class="btn btn-primary">View</a>
+                  </td>
                 </tr>
-                @endforeach --}}
+                @endforeach
 
               </table>
             </div>
