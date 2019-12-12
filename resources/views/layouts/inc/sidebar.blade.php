@@ -86,10 +86,10 @@
                     <p>Registration </p><span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li><a href="{{URL::to('admin/login/form')}}">Registration Form Doctor</a></li>
-                    <li><a href="forgot.html">Register Form Bill</a></li>
-                    <li><a href="forgot.html">Register Form Medicine</a></li>
-                    <li><a href="forgot.html">Register Form Test</a></li>
+                    <li><a href="{{route('registration.form.doctor')}}">Registration Form Doctor</a></li>
+                    <li><a href="{{route('registration.form.bill')}}">Register Form Bill</a></li>
+                    <li><a href="{{route('registration.form.medicine')}}">Register Form Medicine</a></li>
+                    <li><a href="{{route('registration.form.test')}}">Register Form Test</a></li>
 
                 </ul>
             </li>

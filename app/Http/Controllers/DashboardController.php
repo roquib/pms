@@ -15,6 +15,22 @@ use App\SaveTest;
 
 class DashboardController extends Controller
 {
+    public function formdoctor()
+    {
+        return view('pages.admin.registration.doctor');
+    }
+    public function formbill()
+    {
+        return view('pages.admin.registration.bill');
+    }
+    public function formtest()
+    {
+        return view('pages.admin.registration.test');
+    }
+    public function formmedicine()
+    {
+        return view('pages.admin.registration.medicine');
+    }
     public function adminShowPatientAll()
     {
         $patients = User::where('role_id', 6)->get();
