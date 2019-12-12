@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use DB;
 
 class User extends Authenticatable
 {
@@ -22,6 +23,14 @@ class User extends Authenticatable
     // {
     //     return $this->role == $role;
     // }
+    public function patient($id)
+    {
+        return DB::table('patients')->where('user_id', $id)->get()->first();
+    }
+    public function doctor($id)
+    {
+        return DB::table('users')->where('id', $id)->get()->first();
+    }
     private function checkIfUserHasRole($need_role)
     {
         return (strtolower($need_role) == strtolower($this->role->name)) ? true : null;

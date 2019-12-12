@@ -1,11 +1,8 @@
 <?php
 
-
-// Route::group(['middleware' => ['auth']], function () {
-// 	Route::get('/admin/login', ['as' => 'admin.login', 'uses' => 'LoginController@getLogin']);
-// 	Route::post('/admin/login', ['as' => 'admin.login', 'uses' => 'LoginController@postLogin']);
-// 	Route::post('/admin/logout', ['as' => 'admin.logout', 'uses' => 'LoginController@getLogout']);
-// });
+Route::get('/admin/login', ['as' => 'admin.login', 'uses' => 'LoginController@getLogin']);
+Route::post('/admin/login', ['as' => 'admin.login', 'uses' => 'LoginController@postLogin']);
+// Route::post('/admin/logout', ['as' => 'admin.logout', 'uses' => 'LoginController@getLogout']);
 // Route::group(['middleware' => ['authen', 'roles']], function () { });
 Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin', 'testadmin', 'billadmin', 'doctoradmin', 'medicineadmin']], function () {
 	Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@dashboard']);
@@ -14,6 +11,7 @@ Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin', 'testadm
 	Route::get('/admin/view/{id}', ['as' => 'view-admin', 'uses' => 'DashboardController@viewAdmin']);
 	Route::get('/admin/setting', ['as' => 'setting', 'uses' => 'DashboardController@setting']);
 	Route::get('/patient/all', ['as' => 'allPatient', 'uses' => 'DashboardController@allPatient']);
+	Route::get('/admin/show/patient/all', ['as' => 'admin.show.patient.all', 'uses' => 'DashboardController@adminShowPatientAll']);
 	Route::get('/patient/{id}/payment', ['as' => 'bill.payment', 'uses' => 'DashboardController@billPayment']);
 	Route::get('/patient/{id}/payment/confirm', ['as' => 'bill.payment.confirm', 'uses' => 'DashboardController@billPaymentConfirm']);
 	Route::get('/patient/all/bill', ['as' => 'bill.admin', 'uses' => 'DashboardController@bill']);

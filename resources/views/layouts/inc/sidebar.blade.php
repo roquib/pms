@@ -46,7 +46,8 @@
 
             <li>
                 @can('isAdmin')
-                <a href="{{route('allPatient')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
+                <a href="{{route('admin.show.patient.all')}}"><span
+                        class="menu-icon glyphicon glyphicon-briefcase"></span>
                     <p>Patients</p>
                 </a>
                 @elsecan('isDoctorAdmin')
@@ -80,13 +81,16 @@
 
 
 
-            <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-log-in"></span><p>Registration </p><span class="arrow"></span></a>
+            <li class="droplink"><a href="#" class="waves-effect waves-button"><span
+                        class="menu-icon glyphicon glyphicon-log-in"></span>
+                    <p>Registration </p><span class="arrow"></span>
+                </a>
                 <ul class="sub-menu">
                     <li><a href="{{URL::to('admin/login/form')}}">Registration Form Doctor</a></li>
                     <li><a href="forgot.html">Register Form Bill</a></li>
                     <li><a href="forgot.html">Register Form Medicine</a></li>
                     <li><a href="forgot.html">Register Form Test</a></li>
-                   
+
                 </ul>
             </li>
 
@@ -102,7 +106,7 @@
 
 
             <li>
-            <a href="{{URL::to('/admin/alltest')}}"><span class="menu-icon glyphicon glyphicon-flash"></span>
+                <a href="{{URL::to('/admin/alltest')}}"><span class="menu-icon glyphicon glyphicon-flash"></span>
                     <p>Test</p>
                 </a>
             </li>
@@ -112,7 +116,8 @@
 
 
             <li>
-                <a href="{{URL::to('/admin/allmedicine')}}" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-gift"></span>
+                <a href="{{URL::to('/admin/allmedicine')}}" class="waves-effect waves-button"><span
+                        class="menu-icon glyphicon glyphicon-gift"></span>
                     <p>Medicine</p></span>
                 </a>
 

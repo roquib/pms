@@ -230,22 +230,42 @@
                     {{-- <li role="presentation"><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox<span
                                         class="badge badge-success pull-right">4</span></a></li> --}}
                     <li role="presentation" class="divider"></li>
-                    <li role="presentation"><a href="{{ route('admin.logout') }}"><i class="fa fa-sign-out  m-r-xs"
-                                onclick="event.preventDefault();
-                                                     document.getElementById('admin-logout-form').submit();"></i>Log
-                            out</a>
-                        <form id="admin-logout-form" action="{{ route('admin.logout') }}" method="POST"
-                            style="display: none;">
+                    <li role="presentation">
+                        @guest
+                    <li role="presentation">
+                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
+                    <li role="presentation">
+                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                    @endif
+                    @else
+                    <li class="nav-item dropdown">
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                                                             document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
-                            @method('POST')
                         </form>
                     </li>
-                </ul>
+                    @endguest
+            </li>
+            </ul>
             </li>
             <li>
-                <a href="{{ route('admin.logout') }}" class="log-out waves-effect waves-button waves-classic">
-                    <span><i class="fa fa-sign-out m-r-xs"></i>Log out</span>
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                                                                             document.getElementById('nav-logout-form').submit();">
+                    {{ __('Logout') }}
                 </a>
+
+                <form id="nav-logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </li>
             {{-- <li>
                         <a href="javascript:void(0);" class="waves-effect waves-button waves-classic" id="showRight">

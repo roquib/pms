@@ -15,6 +15,12 @@ use App\SaveTest;
 
 class DashboardController extends Controller
 {
+    public function adminShowPatientAll()
+    {
+        $patients = User::where('role_id', 6)->get();
+        // dd($patients);
+        return view('pages.admin.adminShowPatientAll', ['patients' => $patients]);
+    }
     public function __construct()
     {
         $this->middleware('web');
@@ -69,7 +75,9 @@ class DashboardController extends Controller
 
     public function allAdmins()
     {
-        return view('pages.admin.all-admins', ['users' => User::all()]);
+        $users = User::where('role_id', 'not like', '%6%')->get();
+        // $users = DB::table('users')->where('role_id', 'not like', '%6%')->get();
+        return view('pages.admin.all-admins', ['users' => $users]);
     }
     public function viewAdmin($id)
     {
