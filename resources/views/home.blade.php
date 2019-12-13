@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
+
+ <div class="main-content">
+
 <div class="container">
     <form class="appointment-form" id="frm-create-appointment" method="POST" action="{{route('appointmentConfirm')}}">
         @csrf
@@ -241,6 +244,7 @@
 
     </form>
 </div>
+</div> 
 @endsection
 @section('css')
 <style>
@@ -297,6 +301,8 @@
         margin-bottom: 35px;
         text-align: center !important;
         background-color: powderblue;
+        line-height: 40px;
+
 
     }
 
@@ -327,6 +333,7 @@
         padding-left: 95px;
         padding-top: 6px;
         font-size: 16px;
+        color: black;
 
     }
 
@@ -506,7 +513,8 @@
     $('#frm-create-appointment').on('submit',function(e){
         e.preventDefault();
         var data = $(this).serializeArray();
-        console.log(data);
+        // console.log(data);
+        $(this).get(0).submit();
     });
 </script>
 @endsection

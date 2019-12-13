@@ -6,12 +6,12 @@
 
     <meta charset="UTF-8">
 
-    <title>Demo</title>
+    <title>Patients Management System</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" /> --}}
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 

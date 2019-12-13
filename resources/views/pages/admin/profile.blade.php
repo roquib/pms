@@ -47,7 +47,7 @@
                 <ul class="list-unstyled">
                     <li class="timeline-item">
                         <div class="panel panel-white">
-                            <div class="panel-body">
+                            {{-- <div class="panel-body">
                                 <div class="timeline-item-header">
                                     <img src="{{asset('admin/assets/images/avatar3.png')}}" alt="">
                                     <p>Christopher palmer <span>Posted a Status</span></p>
@@ -61,7 +61,7 @@
                                     <button type="text" class="btn btn-primary">View</button>
 
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </li>
 

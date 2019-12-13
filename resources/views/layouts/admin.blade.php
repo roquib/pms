@@ -4,7 +4,7 @@
 <head>
 
     <!-- Title -->
-    <title>Modern | Extra - Invoice</title>
+    <title>Patients Management System</title>
 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta charset="UTF-8">

@@ -1,11 +1,24 @@
 @extends('layouts.admin')
 @section('content')
 
-<div class="container">  
+<div class="container" style="width: 1055px;">  
+
+          <div class="row"> 
+
+               
+               
+          </div>
           
 
           <div class="row ">
+
+                    
                <div class="col-sm-12 mt-5 " style="margin-top: 100px;">
+
+                    <div class="text-right">
+
+                         <a href="#" class="btn btn-primary " style="margin-right: 80px;margin-bottom: 16px;"> Add </a>
+                    </div>
                          <table class="table table-striped text-center">
 
                                    <tr  style="color: black;
@@ -21,8 +34,8 @@
 
                          <tr class="text-center" style="font-size: 15px;text-transform: capitalize;">
 
-                             <td>CBC</td>
-                             <td>200</td>
+                             <td>Normal-Room</td>
+                             <td>1000</td>
 
                               <td> 
                                    <a href={{ URL::to('view/patients/')}} class="btn btn-success  text-center">View </a>
@@ -36,6 +49,44 @@
 
                                    
                               </tr>
+                              
+                         <tr class="text-center" style="font-size: 15px;text-transform: capitalize;">
+
+                                   <td>Cavin-Room</td>
+                                   <td>2000</td>
+      
+                                    <td> 
+                                         <a href={{ URL::to('view/patients/')}} class="btn btn-success  text-center">View </a>
+      
+                                         <a href="{{ URL::to('edit/patients/')}}" class="btn btn-warning  text-center">Edit</a> 
+      
+                                         <a href="{{ URL::to('delete/patients/')}}" class="btn btn-danger  text-center " > Delete</a>	 
+                                          
+                                    
+                                    </td>                                      
+      
+                                         
+                                    </tr>
+                                    
+                         <tr class="text-center" style="font-size: 15px;text-transform: capitalize;">
+
+                                   <td>ICU</td>
+                                   <td>3000</td>
+      
+                                    <td> 
+                                         <a href={{ URL::to('view/patients/')}} class="btn btn-success  text-center">View </a>
+      
+                                         <a href="{{ URL::to('edit/patients/')}}" class="btn btn-warning  text-center">Edit</a> 
+      
+                                         <a href="{{ URL::to('delete/patients/')}}" class="btn btn-danger  text-center " > Delete</a>	 
+                                          
+                                    
+                                    </td>                                      
+      
+                                         
+                                    </tr>
+                                    
+                     
                              
                          {{-- @endforeach --}}
 

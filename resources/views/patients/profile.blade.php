@@ -115,11 +115,11 @@
       </div>
       <!--/row-->
     </div>
-    <div class="tab-pane" id="edit">
+    <div class="tab-pane " id="edit" style="width: 510px;margin: auto;">
       <form role="form" method="post" action="update_profile.php">
         <input type="hidden" name="student_id" />
         <div class="form-group row">
-          <label class="col-lg-3 col-form-label form-control-label">name</label>
+          <label class="col-lg-3 col-form-label form-control-label">Name</label>
           <div class="col-lg-9">
             <input class="form-control" value="{{Auth::user()->name}}" type="text" name="name" />
           </div>
