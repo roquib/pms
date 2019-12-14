@@ -70,11 +70,14 @@
                 <tr>
                   <td>{{$patient->id}}</td>
                   <td>{{$patient->name}}</td>
-                  <td>{{$patient->patient($patient->id)->gender}}</td>
                   @php
-                  $doctor = $patient->patient($patient->id);
+                      $gender = $patient->patient($patient->id)
                   @endphp
-                  <td>{{$patient->doctor($doctor->doctor)->name}}</td>
+                  <td>{{$gender}}</td>
+                    @php
+                    $doctor = $patient->patient($patient->id);
+                    @endphp
+                    {{-- <td>{{$patient->doctor($doctor->doctor)->name}}</td> --}}
                 </tr>
                 @endforeach
 

@@ -25,11 +25,13 @@ class User extends Authenticatable
     // }
     public function patient($id)
     {
-        return DB::table('patients')->where('user_id', $id)->get()->first();
+        // return DB::table('patients')->where('user_id', $id)->get()->first();
+        return Patient::where('user_id',$id)->get()->first()->gender;
     }
     public function doctor($id)
     {
-        return DB::table('users')->where('id', $id)->get()->first();
+        // return DB::table('users')->where('id', $id)->get()->first();
+        return User::where('id',$id)->get()->first();
     }
     private function checkIfUserHasRole($need_role)
     {
