@@ -16,9 +16,10 @@ class RolesTableSeeder extends Seeder
             ['name' => 'admin'],
             ['name' => 'testadmin'],
             ['name' => 'billadmin'],
-            ['name' => 'helpdesk'],
+            ['name' => 'medicineadmin'],
             ['name' => 'doctoradmin'],
             ['name' => 'patient'],
+            ['name' => 'reception'],
         ]);
     }
 }

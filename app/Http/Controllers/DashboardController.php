@@ -75,6 +75,10 @@ class DashboardController extends Controller
         $due = $total - $pays;
         return view('pages.admin.billPaymentConfirm', ['patient' => $patient, 'prescriptions' => $prescriptions, 'tests' => $tests, 'medicines' => $medicines, 'total_payment' => $total, 'due_payment' => $due, 'pay_payment' => $pays]);
     }
+    public function reception()
+    {
+        return view('pages.admin.reception');
+    }
     public function bill()
     {
         $prescription = Prescription::select('patient_id')->distinct()->get();
