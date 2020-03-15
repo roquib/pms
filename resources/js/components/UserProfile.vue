@@ -222,7 +222,7 @@ export default {
             .get("/api/user/" + this.userid)
             .then(({ data }) => (this.users = data));
     },
-    props: ["userid"],
+    props: ["userid"],  
     data() {
         return {
             users: {},

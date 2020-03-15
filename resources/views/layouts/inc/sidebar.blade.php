@@ -67,6 +67,10 @@
                 <a href="{{route('patient.get')}}"><span class="menu-icon glyphicon glyphicon-briefcase"></span>
                     <p>Patients</p>
                 </a>
+                @elsecan('isReception')
+                <a href="{{route('reception')}}"><span class="menu-icon glyphicon glyphicon-edit"></span>
+                    <p>reception</p>
+                </a>
                 @endcan
             </li>
 

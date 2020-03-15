@@ -5,34 +5,34 @@ Route::post('/admin/login', ['as' => 'admin.login', 'uses' => 'LoginController@p
 // Route::post('/admin/logout', ['as' => 'admin.logout', 'uses' => 'LoginController@getLogout']);
 // Route::group(['middleware' => ['authen', 'roles']], function () { });
 Route::group(['middleware' => ['authen', 'roles'], 'roles' => ['admin', 'testadmin', 'billadmin', 'doctoradmin', 'medicineadmin', 'reception']], function () {
-	Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@dashboard']);
-	Route::get('/admin/profile', ['as' => 'profile', 'uses' => 'DashboardController@profile']);
-	Route::get('/admin/all', ['as' => 'all-admins', 'uses' => 'DashboardController@allAdmins']);
-	Route::get('/admin/view/{id}', ['as' => 'view-admin', 'uses' => 'DashboardController@viewAdmin']);
-	Route::get('/admin/setting', ['as' => 'setting', 'uses' => 'DashboardController@setting']);
-	Route::get('/patient/all', ['as' => 'allPatient', 'uses' => 'DashboardController@allPatient']);
-	Route::get('/admin/show/patient/all', ['as' => 'admin.show.patient.all', 'uses' => 'DashboardController@adminShowPatientAll']);
-	Route::get('/patient/{id}/payment', ['as' => 'bill.payment', 'uses' => 'DashboardController@billPayment']);
-	Route::get('/patient/{id}/payment/confirm', ['as' => 'bill.payment.confirm', 'uses' => 'DashboardController@billPaymentConfirm']);
-	Route::get('/patient/all/bill', ['as' => 'bill.admin', 'uses' => 'DashboardController@bill']);
-	Route::get('/prescription/{id}/patient/{patientid}', ['as' => 'prescription.doc', 'uses' => 'PrescriptionController@prescriptionDoc']);
-	Route::get('/bill/payment', ['as' => 'payment', 'uses' => 'DashboardController@payment']);
-	Route::post('/prescription/store', ['as' => 'prescription.store', 'uses' => 'PrescriptionController@prescriptionStore']);
-	Route::get('/patients/{id}', ['middleware' => ['auth'], 'as' => 'showPatient', 'uses' => 'PageController@showPatient']);
-	Route::post('/delete/{id}', ['as' => 'delete', 'uses' => 'DashboardController@destroy']);
-	Route::post('/pay', ['as' => 'pay', 'uses' => 'PaymentController@store']);
-	Route::post('/medicine/patient', ['as' => 'patient.post', 'uses' => 'PharmecyController@store']);
-	Route::get('/medicine/patient', ['as' => 'patient.get', 'uses' => 'PharmecyController@fetch']);
-	Route::get('/medicine/patient/{id}/view', ['as' => 'patient.get.view', 'uses' => 'PharmecyController@view']);
-	Route::get('/registration/form/doctor', ['as' => 'registration.form.doctor', 'uses' => 'DashboardController@formdoctor']);
-	Route::get('/registration/form/bill', ['as' => 'registration.form.bill', 'uses' => 'DashboardController@formbill']);
-	Route::get('/registration/form/medicine', ['as' => 'registration.form.medicine', 'uses' => 'DashboardController@formmedicine']);
-	Route::get('/reception', ['as' => 'reception', 'uses' => 'DashboardController@reception']);
-	Route::get('/registration/form/test', ['as' => 'registration.form.test', 'uses' => 'DashboardController@formtest']);
-	Route::get('/search', ['as' => 'search', 'uses' => 'PageController@search']);
+    Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@dashboard']);
+    Route::get('/admin/profile', ['as' => 'profile', 'uses' => 'DashboardController@profile']);
+    Route::get('/admin/all', ['as' => 'all-admins', 'uses' => 'DashboardController@allAdmins']);
+    Route::get('/admin/view/{id}', ['as' => 'view-admin', 'uses' => 'DashboardController@viewAdmin']);
+    Route::get('/admin/setting', ['as' => 'setting', 'uses' => 'DashboardController@setting']);
+    Route::get('/patient/all', ['as' => 'allPatient', 'uses' => 'DashboardController@allPatient']);
+    Route::get('/admin/show/patient/all', ['as' => 'admin.show.patient.all', 'uses' => 'DashboardController@adminShowPatientAll']);
+    Route::get('/patient/{id}/payment', ['as' => 'bill.payment', 'uses' => 'DashboardController@billPayment']);
+    Route::get('/patient/{id}/payment/confirm', ['as' => 'bill.payment.confirm', 'uses' => 'DashboardController@billPaymentConfirm']);
+    Route::get('/patient/all/bill', ['as' => 'bill.admin', 'uses' => 'DashboardController@bill']);
+    Route::get('/prescription/{id}/patient/{patientid}', ['as' => 'prescription.doc', 'uses' => 'PrescriptionController@prescriptionDoc']);
+    Route::get('/bill/payment', ['as' => 'payment', 'uses' => 'DashboardController@payment']);
+    Route::post('/prescription/store', ['as' => 'prescription.store', 'uses' => 'PrescriptionController@prescriptionStore']);
+    Route::get('/patients/{id}', ['middleware' => ['auth'], 'as' => 'showPatient', 'uses' => 'PageController@showPatient']);
+    Route::post('/delete/{id}', ['as' => 'delete', 'uses' => 'DashboardController@destroy']);
+    Route::post('/pay', ['as' => 'pay', 'uses' => 'PaymentController@store']);
+    Route::post('/medicine/patient', ['as' => 'patient.post', 'uses' => 'PharmecyController@store']);
+    Route::get('/medicine/patient', ['as' => 'patient.get', 'uses' => 'PharmecyController@fetch']);
+    Route::get('/medicine/patient/{id}/view', ['as' => 'patient.get.view', 'uses' => 'PharmecyController@view']);
+    Route::get('/registration/form/doctor', ['as' => 'registration.form.doctor', 'uses' => 'DashboardController@formdoctor']);
+    Route::get('/registration/form/bill', ['as' => 'registration.form.bill', 'uses' => 'DashboardController@formbill']);
+    Route::get('/registration/form/medicine', ['as' => 'registration.form.medicine', 'uses' => 'DashboardController@formmedicine']);
+    Route::get('/reception', ['as' => 'reception', 'uses' => 'DashboardController@reception']);
+    Route::get('/registration/form/test', ['as' => 'registration.form.test', 'uses' => 'DashboardController@formtest']);
+    Route::get('/search', ['as' => 'search', 'uses' => 'PageController@search']);
 });
 Route::get('/noPermission', function () {
-	return view('permission.noPermission');
+    return view('permission.noPermission');
 })->name('noPermission');
 // Route::get('/', ['as' => '/', 'uses' => 'HomeController@index']);
 Route::get('/doctor', ['as' => 'doctor', 'uses' => 'PageController@doctor']);
@@ -44,10 +44,6 @@ Route::get('/patient/appointment/confirm', ['middleware' => ['auth'], 'as' => 'a
 Route::get('/contact', ['as' => 'contact', 'uses' => 'PageController@contact']);
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile/user', 'HomeController@profile')->name('profile.user');
-
-
-
-
 
 //Category Doctor route
 
@@ -67,11 +63,9 @@ Auth::routes();
 
 // Route::get('/', 'HomeController@index')->name('home');
 
-
 //admin login route
 
 Route::get('/admin/login/form', ['as' => 'admin/login/form', 'uses' => 'all_admin_login_Controller@login'])->name('login');
-
 
 //test route
 

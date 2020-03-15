@@ -1,15 +1,18 @@
 @extends('layouts.master')
 @section('content')
-@if (session()->has('success'))
-<div class="container">
-    <h1 class="display-4 mt-5">
-        <div class="text-center alert alert-success">
-            {!! session()->get('success')!!}
-        </div>
-    </h1>
-</div>
-@endif
-@endsection
+
+                    @if (session()->has('success'))
+                    <div class="container">
+                        <h1 class="display-4 mt-5">
+                            <div class="text-center alert alert-success">
+                                {!! session()->get('success')!!}
+                            </div>
+                        </h1>
+                    </div>
+                    @endif
+                    @endsection
+
+
 @section('js')
 <script>
     $(document).ready(function () {

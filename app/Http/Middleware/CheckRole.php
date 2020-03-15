@@ -21,7 +21,7 @@ class CheckRole
         }
         return redirect()->route('noPermission');
     }
-    public function getRequiredRoleForRoute($route)
+    private function getRequiredRoleForRoute($route)
     {
         $actions = $route->action;
         // dd($actions['roles']);
